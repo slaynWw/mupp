@@ -3,7 +3,7 @@ const { token, debug } = require('./config');
 const { blue, cyan, green } = require('chalk');
 
 const manager = new ClusterManager(`${__dirname}/slxxxx.js`, {
-    totalShards: 'auto',
+    totalShards: 10,
     shardsPerClusters: 5,
     totalClusters: 2,
     mode: 'process',

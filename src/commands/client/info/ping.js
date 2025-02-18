@@ -7,7 +7,7 @@ module.exports = [{
             {newEmbed:
                 {author:Pong! 🏓}
                 {field:Client latency:\`$interactionPingms\`:true}
-                {field:API latency:\`$pingms\`:true}
+                {field:API latency:\`$pingms ($guildShardID)\`:true}
                 {field:MongoDB ping:\`$round[$mongoPing]ms\`:false}
                 {color:$getMVar[embedColor]}
             }
