@@ -1,15 +1,13 @@
 module.exports = {
     ownerID: "529790206195269632",
-    
-    //badges
-    shkoloShieldBadge: "<:shkoloshield:1332377769459453962>",
-    shkoloShield2Badge: "<:shkoloshield2:1332377120143315015>",
 
     //user
         //profile
         customBadges: "",
         fieldTitle: "Что-бы изменить используйте /profile и нажмите на меню ниже.",
         fieldDescription: "текст бокс для профиля пользователя в боте slxxxx.",
+        shkoloShieldBadge: "<:shkoloshield:1332377769459453962>",
+        shkoloShield2Badge: "<:shkoloshield2:1332377120143315015>",
     
         //stats
         voiceTime: 0,

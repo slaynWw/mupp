@@ -11,8 +11,8 @@ const client = new AoiClient({
     intents: ['Guilds', 'GuildMessages', 'GuildVoiceStates', 'DirectMessages', 'MessageContent'],
     events: ['onMessage', 'onInteractionCreate', 'onVoiceStateUpdate', 'onGuildJoin', 'onGuildLeave'],
     disableAoiDB: true,
-    suppressAllErrors: config.debug ? false : true,
-    aoiLogs: config.debug,
+    suppressAllErrors: true,
+    aoiLogs: false,
     shards: getInfo().SHARD_LIST,
     shardCount: getInfo().TOTAL_SHARDS,
 });
@@ -25,13 +25,13 @@ aoimongo.setup({
 
 new Manager(client, {
     nodes: [{
-        name: 'free1',
+        name: 'Tranquility',
         host: 'lava-v4.ajieblogs.eu.org',
         port: 443,
         auth: 'https://dsc.gg/ajidevserver',
         secure: true
     },{
-        name: 'free2',
+        name: 'Requiem',
         host: 'lavalink_v4.muzykant.xyz',
         port: 443,
         auth: 'https://discord.gg/v6sdrD9kPh',

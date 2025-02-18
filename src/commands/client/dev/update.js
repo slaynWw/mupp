@@ -4,7 +4,7 @@ module.exports = [{
     code: `
     $author[Команды успешно перезагружены!]
     $addField[API latency;\`$pingms\`;true]
-    $addField[Client latency;\`$messagePingms\`;true]
+    $addField[Client latency;\`$round[$messagePing]ms\`;true]
     $color[$getMVar[embedColor]]
     $reply[$messageID;false]
 
