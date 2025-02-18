@@ -4,7 +4,7 @@ module.exports = [{
     prototype: "slash",
     code: `
         $interactionFollowUp[
-            <@$interactionData[author.id]> подбрасывает монетку\: $randomText[ОРЕЛ;РЕШКА]
+            <@$interactionData[author.id]> подбрасывает монетку\: \`$randomText[ОРЕЛ;РЕШКА]\`
             ;false;false
         ]
         $interactionDefer[false]

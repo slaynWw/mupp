@@ -2,7 +2,7 @@
   "name": "slxxxx",
   "version": "0.0.1",
   "description": "Discord bot for qff. Made with lxve.",
-  "main": "src/index.js",
+  "main": "src/shard.js",
   "scripts": {
     "test": "node ."
   },
@@ -22,9 +22,9 @@
   "homepage": "https://github.com/slaynWw/slxxxx#readme",
   "dependencies": {
     "aoi.js": "^6.9.0",
-    "aoi.js-handler": "^1.1.0",
+    "aoi.mongodb": "^1.2.2",
+    "aoijs.lavalink": "^4.8.0",
     "discord-hybrid-sharding": "^2.2.4",
-    "discord.js": "^14.18.0",
     "dotenv": "^16.4.7",
     "scootz.js": "^1.0.1"
   }

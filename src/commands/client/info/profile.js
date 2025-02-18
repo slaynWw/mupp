@@ -6,12 +6,11 @@ module.exports = [{
         $interactionReply[
             {newEmbed:
                 {author:$userNickname[$guildID;$get[user];true]}
-                {description:$userBadges[$get[user]; ] $getUservar[customBadges;$get[user]]}
                 {field:В числе участников с\::<\:discord\:1330671429947101285> <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:R> — <\:qff\:1330670969169248256> <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID;ms];1000]]:R>:false}
-                {field:$getUserVar[fieldTitle;$get[user]]:$getUserVar[fieldDescription;$get[user]]:false}
+                {field:$getUserMVar[fieldTitle;$get[user]]:$getUserMVar[fieldDescription;$get[user]]:false}
                 {thumbnail:$userAvatar[$get[user]]}
-                {image:$if[$userBanner[$get[user];4096;true;png]==null;$getVar[line];$userBanner[$get[user];4096;true;png]]}
-                {color:$getVar[embedColor]}
+                {image:$if[$userBanner[$get[user];4096;true;png]==null;$getMVar[line];$userBanner[$get[user];4096;true;png]]}
+                {color:$getMVar[embedColor]}
             }
             {actionRow:
                 {selectMenu:profileMenu:Профиль $username[$get[user]]:1:1:false:
@@ -36,12 +35,12 @@ module.exports = [{
         $interactionReply[
             {newEmbed:
                 {author:$userNickname[$guildID;$get[user];true]}
-                {description:$userBadges[$get[user]; ] $getUservar[customBadges;$get[user]]}
+                {description:$userBadges[$get[user]; ] $getUserMVar[customBadges;$get[user]]}
                 {field:В числе участников с\::<\:discord\:1330671429947101285> <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:R> — <\:qff\:1330670969169248256> <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID;ms];1000]]:R>:false}
-                {field:$getUserVar[fieldTitle;$get[user]]:$getUserVar[fieldDescription;$get[user]]:false}
+                {field:$getUserMVar[fieldTitle;$get[user]]:$getUserMVar[fieldDescription;$get[user]]:false}
                 {thumbnail:$userAvatar[$get[user]]}
-                {image:$if[$userBanner[$get[user];4096;true;png]==null;$getVar[line];$userBanner[$get[user];4096;true;png]]}
-                {color:$getVar[embedColor]}
+                {image:$if[$userBanner[$get[user];4096;true;png]==null;$getMVar[line];$userBanner[$get[user];4096;true;png]]}
+                {color:$getMVar[embedColor]}
             }
             {actionRow:
                 {selectMenu:profileMenu:Профиль $username[$get[user]]:1:1:false:
@@ -75,12 +74,12 @@ module.exports = [{
         $interactionUpdate[
             {newEmbed:
                 {author:$userNickname[$guildID;$get[user];true]}
-                {description:$userBadges[$get[user]; ] $getUservar[customBadges;$get[user]]}
+                {description:$userBadges[$get[user]; ] $getUserMVar[customBadges;$get[user]]}
                 {field:В числе участников с\::<\:discord\:1330671429947101285> <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:R> — <\:qff\:1330670969169248256> <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID;ms];1000]]:R>:false}
-                {field:$getUserVar[fieldTitle;$get[user]]:$getUserVar[fieldDescription;$get[user]]:false}
+                {field:$getUserMVar[fieldTitle;$get[user]]:$getUserMVar[fieldDescription;$get[user]]:false}
                 {thumbnail:$userAvatar[$get[user]]}
-                {image:$if[$userBanner[$get[user];4096;true;png]==null;$getVar[line];$userBanner[$get[user];4096;true;png]]}
-                {color:$getVar[embedColor]}
+                {image:$if[$userBanner[$get[user];4096;true;png]==null;$getMVar[line];$userBanner[$get[user];4096;true;png]]}
+                {color:$getMVar[embedColor]}
             }
             {actionRow:
                 {selectMenu:profileMenu:Профиль $username[$get[user]]:1:1:false:
@@ -102,11 +101,11 @@ module.exports = [{
             {newEmbed:
                 {author:Статистика $userNickname[$guildID;$get[user];true]}
 
-                {field:Общяя статистика:Сообщений\: $getUserVar[messageCount;$get[user]]\nВремя в голосовом канале\: $getUserVar[voiceTime;$get[user]]:false}
-                {field:Анонимные сообщения:Получено\: $getUserVar[receivedMessageCount;$get[user]]\nОтправлено\: $getUserVar[sendedMessageCount;$get[user]]:false}
+                {field:Общяя статистика:Сообщений\: $getUserMVar[messageCount;$get[user]]\nВремя в голосовом канале\: $getUserMVar[voiceTime;$get[user]]:false}
+                {field:Анонимные сообщения:Получено\: $getUserMVar[receivedMessageCount;$get[user]]\nОтправлено\: $getUserMVar[sendedMessageCount;$get[user]]:false}
 
                 {thumbnail:$userAvatar[$get[user]]}
-                {color:$getVar[embedColor]}
+                {color:$getMVar[embedColor]}
             }
             {actionRow:
                 {button:Вернуться:secondary:profileBack:false:↩️}
@@ -146,15 +145,28 @@ module.exports = [{
             ;everyone;true;false
         ]
 
-        $setUserVar[fieldTitle;$textInputValue[fieldTitle];$interactionData[author.id]]
-        $setUserVar[fieldDescription;$textInputValue[fieldDescription];$interactionData[author.id]]
+        $setUserMVar[fieldTitle;$textInputValue[fieldTitle];$interactionData[author.id]]
+        $setUserMVar[fieldDescription;$textInputValue[fieldDescription];$interactionData[author.id]]
     `
 }]
 
 /*
+        $interactionReply[
+            {newEmbed:
+                {author:$userNickname[$guildID;$get[user];true]}
+                {description:$userBadges[$get[user]; ] $getUserMVar[customBadges;$get[user]]}
+                {field:В числе участников с\::<\:discord\:1330671429947101285> <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:R> — <\:qff\:1330670969169248256> <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID;ms];1000]]:R>:false}
+                {field:$getUserMVar[fieldTitle;$get[user]]:$getUserMVar[fieldDescription;$get[user]]:false}
+                {thumbnail:$userAvatar[$get[user]]}
+                {image:$if[$userBanner[$get[user];4096;true;png]==null;$getMVar[line];$userBanner[$get[user];4096;true;png]]}
+                {color:$getMVar[embedColor]}
+            }
             {actionRow:
                 {selectMenu:profileMenu:Профиль $username[$get[user]]:1:1:false:
-                    {stringInput:Настройки профиля:profileSettings::false:}
+                    {stringInput:Статистика:profileStats::false:📈}
+                    {stringInput:Настройки профиля:profileSettings::false:🔧}
                 }
             }
+            ;everyone;false;false
+        ]
 */

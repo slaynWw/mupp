@@ -37,7 +37,7 @@ module.exports = [{
                 {author:Список команд}
                 {field:Utility:</help\:$getApplicationCommandID[help;global]>, </ping\:$getApplicationCommandID[ping;global]>:false}
                 {field:Fun:</send\:$getApplicationCommandID[send;global]>, </say\:$getApplicationCommandID[say;global]>, </roll\:$getApplicationCommandID[roll;global]>, </flip\:$getApplicationCommandID[flip;global]>:false}
-                {color:$getVar[embedColor]}
+                {color:$getMVar[embedColor]}
             }
             {actionRow:
                 {button::secondary:backID:false:↩️}

@@ -1,7 +1,7 @@
 module.exports = [{
     name: "menu",
     code: `
-    $getVar[banner]
+    $getMVar[banner]
     $addSelectMenu[1;string;menuID;Выберите пункт;1;1;false;
         Роли:Цветные роли.:rolesID:false:<a\:whiterose\:1328770133274919083>;
         slxnqq?:Инфа, конфиги и т.п.:ownerID:false:<a\:butterflies\:1327681585658597396>;
@@ -21,7 +21,7 @@ module.exports = [{
             {field:ПК:\`\`\`yaml\nCPU\: Ryzen 5 5600\nGPU\: ASUS DUAL RX6600\nRAM\: PATRIOT Viper 4 2x8GB\nROM\: ADATA LEGEND 960 1TB & NN SSD 512GB\nPSU\: COOLER MASTER 750W\nMB\: GIGABYTE B550 GAMING X V2\n\nOS(main)\: Windows11\nOS(for cs)\: Windows10\`\`\`:false}
             {field:Девайсы:\`\`\`yaml\nMice\: VGN Dradgofly F1 MOBA & 4k dongle\nKeyboard\: Dark Project KD104A\nMousepad\: Varmilo Daisy Desk \nMicrophone\: Fifine K669\nMonitor\: LENOVO LEGION R27FC-30\`\`\`:false}
             {field:Ссылки:[cs2/cfg](https://google.com) [steam](https://steamcommunity.com/id/slaynWw/) [faceit](https://www.faceit.com/ru/players/SlaYn_x) [spotify](https://open.spotify.com/user/31arfxinfglqbibxcnfyxyadwb7q) [twitch](https://www.twitch.tv/slaynww):false}
-            {color:$getVar[embedColor]}
+            {color:$getMVar[embedColor]}
         }
         ;everyone;true;false
     ]
@@ -62,8 +62,8 @@ module.exports = [{
         $interactionReply[
             {newEmbed:
                 {description:<@&1328120131347415130>\n> Роль для меня (<@529790206195269632>) и моей любимки (<@917740250992881724>).\n\n<@&1335818826142449705>\n> Права администратора на этом сервере. Админ пидорас.\n\n<@&983405912955961495>\n> Закинул бусты на сервак, залутал 52, 42 и +реп от пацанов.\n\n<@&1024379159880937552>\n> Скоро пенсия.\n\n<@&965642635031228476>\n> Обычная роль для рядовых юзеров.\n\n<@&966126859676966932>\n> Ебаные вычеслительные мощнонсти.}
-                {color:$getVar[embedColor]}
-                {image:$getVar[rolesBanner]}
+                {color:$getMVar[embedColor]}
+                {image:$getMVar[rolesBanner]}
             }
             ;everyone;true;false
         ]
@@ -81,7 +81,7 @@ module.exports = [{
             {field:Программы:[BoosterX](https://boosterx.org/en/)\n [win10 tweaker](https://win10tweaker.ru/):true}
             {field:Видосы:[Две системы на одном ПК](https://www.youtube.com/watch?v=jb7jusFYQaY)\n[Быстрая оптимизация Windows 11 и 10!](https://www.youtube.com/watch?v=gQ8pqnySAwk):true}
             {field:Гайды в стиме:[Настройка и оптимизации Windows и CS2](https://steamcommunity.com/sharedfiles/filedetails/?id=1651078798)\n[Настройка PUBG и как выжать из PC МАКСИМУМ FPS!](https://steamcommunity.com/sharedfiles/filedetails/?l=german&id=1594401155):false}
-            {color:$getVar[embedColor]}
+            {color:$getMVar[embedColor]}
         }
         ;everyone;true;false
     ]
@@ -94,7 +94,7 @@ module.exports = [{
     prototype: "selectMenu",
     code: `
     $interactionReply[
-        $getVar[rolesBanner]
+        $getMVar[rolesBanner]
         {actionRow:
             {selectMenu:rolesList:Выберите цвет.:1:1:false:
                 {stringInput:yin:yin::false:🤍}

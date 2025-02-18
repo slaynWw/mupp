@@ -7,8 +7,9 @@ module.exports = [{
             {newEmbed:
                 {author:Pong! 🏓}
                 {field:Client ping:\`$pingms\`:true}
-                {field:Aoi.db ping:\`$round[$databasePing]ms\`:true}
-                {color:$getVar[embedColor]}
+                {field:Voice ping:\`$replaceText[$playerPingms;-1ms;none]\`:true}
+                {field:MongoDB ping:\`$round[$mongoPing]ms\`:false}
+                {color:$getMVar[embedColor]}
             }
             ;everyone;false;false
         ]

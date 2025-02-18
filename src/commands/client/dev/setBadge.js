@@ -4,7 +4,7 @@ module.exports = [{
     code: `
         Вы успешно выдали $message[2] пользователю $message[1]
 
-        $setUserVar[customBadges;$message[2];$get[user]]
+        $setUserMVar[customBadges;$message[2];$get[user]]
 
 
         $let[user;$replaceText[$replaceText[$replaceText[$message[1];<;];@;];>;]]

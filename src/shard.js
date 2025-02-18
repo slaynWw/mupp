@@ -2,7 +2,7 @@ const { ClusterManager } = require('discord-hybrid-sharding');
 const { token, debug } = require('./config');
 const { blue, cyan, green } = require('chalk');
 
-const manager = new ClusterManager(`${__dirname}/client.js`, {
+const manager = new ClusterManager(`${__dirname}/slxxxx.js`, {
     totalShards: 1,
     shardsPerClusters: 1,
     mode: 'process',

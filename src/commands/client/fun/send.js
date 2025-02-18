@@ -42,8 +42,8 @@ module.exports = [{
 
         $sendDm[$textInputValue[messageInput]\n-# Сообщение с сервера [$guildName](https://dsc.gg/qffxd);$get[user];false]
 
-        $setUserVar[receivedMessageCount;$sum[$getUserVar[receivedMessageCount;$get[user]];1];$get[user]]
-        $setUserVar[sendedMessageCount;$sum[$getUserVar[sendedMessageCount;$interactionData[author.id]];1];$interactionData[author.id]]
+        $setUserMVar[receivedMessageCount;$sum[$getUserMVar[receivedMessageCount;$get[user]];1];$get[user]]
+        $setUserMVar[sendedMessageCount;$sum[$getUserMVar[sendedMessageCount;$interactionData[author.id]];1];$interactionData[author.id]]
 
         $let[user;$readFile[./src/data/recipient.txt]]
     `
