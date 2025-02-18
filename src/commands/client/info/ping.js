@@ -6,12 +6,11 @@ module.exports = [{
         $interactionReply[
             {newEmbed:
                 {author:Pong! 🏓}
-                {field:Client ping:\`$pingms\`:true}
-                {field:Voice ping:\`$replaceText[$playerPingms;-1ms;none]\`:true}
+                {field:Client latency:\`$interactionPingms\`:true}
+                {field:API latency:\`$pingms\`:true}
                 {field:MongoDB ping:\`$round[$mongoPing]ms\`:false}
                 {color:$getMVar[embedColor]}
             }
-            ;everyone;false;false
         ]
     `
 }]

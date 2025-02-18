@@ -3,7 +3,8 @@ module.exports = [{
     aliases: ["reload", "upd"],
     code: `
     $author[Команды успешно перезагружены!]
-    $addField[Client ping;\`$pingms\`;true]
+    $addField[API latency;\`$pingms\`;true]
+    $addField[Client latency;\`$messagePingms\`;true]
     $color[$getMVar[embedColor]]
     $reply[$messageID;false]
 

@@ -35,7 +35,6 @@ module.exports = [{
         $interactionReply[
             {newEmbed:
                 {author:$userNickname[$guildID;$get[user];true]}
-                {description:$userBadges[$get[user]; ] $getUserMVar[customBadges;$get[user]]}
                 {field:В числе участников с\::<\:discord\:1330671429947101285> <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:R> — <\:qff\:1330670969169248256> <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID;ms];1000]]:R>:false}
                 {field:$getUserMVar[fieldTitle;$get[user]]:$getUserMVar[fieldDescription;$get[user]]:false}
                 {thumbnail:$userAvatar[$get[user]]}
@@ -74,7 +73,6 @@ module.exports = [{
         $interactionUpdate[
             {newEmbed:
                 {author:$userNickname[$guildID;$get[user];true]}
-                {description:$userBadges[$get[user]; ] $getUserMVar[customBadges;$get[user]]}
                 {field:В числе участников с\::<\:discord\:1330671429947101285> <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:R> — <\:qff\:1330670969169248256> <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID;ms];1000]]:R>:false}
                 {field:$getUserMVar[fieldTitle;$get[user]]:$getUserMVar[fieldDescription;$get[user]]:false}
                 {thumbnail:$userAvatar[$get[user]]}
