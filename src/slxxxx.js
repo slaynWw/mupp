@@ -12,7 +12,7 @@ const client = new AoiClient({
     intents: ['Guilds', 'GuildMessages', 'GuildVoiceStates', 'DirectMessages', 'MessageContent'],
     events: ['onMessage', 'onInteractionCreate', 'onVoiceStateUpdate', 'onGuildJoin', 'onGuildLeave'],
     disableAoiDB: true,
-    suppressAllErrors: false,
+    suppressAllErrors: true,
     aoiLogs: false,
     shards: getInfo().SHARD_LIST,
     shardCount: getInfo().TOTAL_SHARDS,
@@ -46,7 +46,6 @@ const handler = new Handler(
     config.loader,
     __dirname
 );
-
 
 handler.loadCommands('./commands/client');
 handler.loadFunctions('./handler/functions');
