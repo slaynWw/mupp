@@ -13,5 +13,5 @@ module.exports = {
 /*
 
 $sendMessage[Lavalink $eventInfo[name] is ready to accept connections.;true]
-
+s
 */
