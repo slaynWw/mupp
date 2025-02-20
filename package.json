@@ -22,6 +22,7 @@
   "homepage": "https://github.com/slaynWw/slxxxx#readme",
   "dependencies": {
     "aoi.js": "^6.9.0",
+    "aoi.js-handler": "^1.1.0",
     "aoi.mongodb": "^1.2.2",
     "aoijs.lavalink": "^4.8.0",
     "discord-hybrid-sharding": "^2.2.4",

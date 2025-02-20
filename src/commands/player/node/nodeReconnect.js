@@ -3,8 +3,6 @@ module.exports = {
     type: 'nodeReconnect',
     channel: '$getConfig[logs.status]',
     code: `
-        $log[Lavalink $eventInfo[name] is reconnecting.]
-        $log[Interval:  $eventInfo[interval]
-        $log[Left:  $eventInfo[left]]
+        Lavalink $eventInfo[name] is reconnecting.\nInterval:  $eventInfo[interval\nLeft:  $eventInfo[left]
     `
 };

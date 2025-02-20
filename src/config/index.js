@@ -4,8 +4,10 @@ module.exports = {
     token: process.env.TOKEN,
     clientId: process.env.CLIENT_ID,
     prefix: process.env.PREFIX,
-    debug: process.env.DEBUG === 'true' ? true : false,
     mongoDB: process.env.MONGODB,
+    debug: process.env.DEBUG === 'true' ? true : false,
+    nodes: require('./nodes.js'),
     emojis: require('./emojis.js'),
-    logs: require('./logs.js')
+    logs: require('./logs.js'),
+    loader: require('./loader.js')
 };

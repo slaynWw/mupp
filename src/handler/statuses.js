@@ -1,5 +1,5 @@
-module.exports = (client) => {
-    client.status(    
+module.exports = {
+    statuses: [
         {
             name: "O_o",
             type: "custom",
@@ -12,5 +12,5 @@ module.exports = (client) => {
             status: "online",
             time: 5
         }
-    );
+    ]
 }

@@ -1,7 +1,17 @@
 module.exports = {
     name: 'nodeConnect',
     type: 'nodeConnect',
+    channel: '$getConfig[logs.status]',
     code: `
-        $log[Lavalink $eventInfo[name] is ready to accept connections.]
+        $title[$eventInfo[name] Connected]
+        $description[Lavalink **$eventInfo[name]** is ready to accept connections.]
+        $color[Green]
+        $addTimestamp
     `
 };
+
+/*
+
+$sendMessage[Lavalink $eventInfo[name] is ready to accept connections.;true]
+
+*/

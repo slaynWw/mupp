@@ -1,7 +1,8 @@
 const config = require('./config');
-const { AoiClient} = require('aoi.js');
+const { AoiClient } = require('aoi.js');
 const aoimongo = require("aoi.mongodb");
 const { Plugins } = require("scootz.js");
+const { Handler } = require("aoi.js-handler");
 const { Manager } = require('aoijs.lavalink');
 const { ClusterClient, getInfo } = require('discord-hybrid-sharding');
 
@@ -11,7 +12,7 @@ const client = new AoiClient({
     intents: ['Guilds', 'GuildMessages', 'GuildVoiceStates', 'DirectMessages', 'MessageContent'],
     events: ['onMessage', 'onInteractionCreate', 'onVoiceStateUpdate', 'onGuildJoin', 'onGuildLeave'],
     disableAoiDB: true,
-    suppressAllErrors: true,
+    suppressAllErrors: false,
     aoiLogs: false,
     shards: getInfo().SHARD_LIST,
     shardCount: getInfo().TOTAL_SHARDS,
@@ -24,19 +25,7 @@ aoimongo.setup({
 });
 
 new Manager(client, {
-    nodes: [{
-        name: 'Tranquility',
-        host: 'lava-v4.ajieblogs.eu.org',
-        port: 443,
-        auth: 'https://dsc.gg/ajidevserver',
-        secure: true
-    },{
-        name: 'Requiem',
-        host: 'lavalink_v4.muzykant.xyz',
-        port: 443,
-        auth: 'https://discord.gg/v6sdrD9kPh',
-        secure: true
-    }],
+    nodes: config.nodes,
     searchEngine: 'spotify',
     maxQueueSize: 1000,
     maxPlaylistSize: 1000,
@@ -49,13 +38,24 @@ new Manager(client, {
     noLimitVolume: false
 });
 
+const handler = new Handler(
+    {
+        client: client,
+        readyLog: false
+    },
+    config.loader,
+    __dirname
+);
+
+
+handler.loadCommands('./commands/client');
+handler.loadFunctions('./handler/functions');
+handler.loadStatuses('./handler/statuses.js');
+
 client.shard = new ClusterClient(client);
-
-require("./handler/ready.js")(client);
-require("./handler/statuses.js")(client);
-
-client.loadCommands("./src/commands/client/", config.debug);
 client.loadVoiceEvents('./src/commands/player/', config.debug);
 
 const plugins = new Plugins({ client: client });
 plugins.loadPlugins();
+
+require("./handler/ready.js")(client);

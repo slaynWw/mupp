@@ -3,8 +3,6 @@ module.exports = {
     type: 'nodeDestroy',
     channel: '$getConfig[logs.status]',
     code: `
-        $log[Lavalink $eventInfo[name] destroyed.]
-        $log[Code:  $eventInfo[code]]
-        $log[Reason:  $eventInfo[reason]]
+        Lavalink $eventInfo[name] destroyed.\nCode:  $eventInfo[code]\nReason:  $eventInfo[reason]
     `
 };
