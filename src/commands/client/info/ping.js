@@ -9,6 +9,7 @@ module.exports = [{
                 {field:Client latency:\`$interactionPingms\`:true}
                 {field:API latency:\`$round[$ping]ms ($guildShardID)\`:true}
                 {field:MongoDB ping:\`$round[$mongoPing]ms\`:false}
+                {footer:Total latency - $round[$sum[$sum[$messagePing;$ping];$mongoPing]]ms}
                 {color:$getMVar[embedColor]}
             }
         ]
