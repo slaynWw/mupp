@@ -6,7 +6,6 @@ module.exports = [{
 	$addField[MongoDB latency;$round[$mongoPing]ms;false]
     $addField[API latency;\`$round[$ping]ms\`;true]
     $addField[Client latency;\`$round[$messagePing]ms\`;true]
-	$footer[Total\: $math[$round[$ping]+$round[$interactionPing]+$round[$mongoPing]]ms]
     $color[$getMVar[embedColor]]
     $reply[$messageID;false]
 
