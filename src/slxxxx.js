@@ -12,8 +12,8 @@ const client = new AoiClient({
     intents: ['Guilds', 'GuildMessages', 'GuildVoiceStates', 'DirectMessages', 'MessageContent'],
     events: ['onMessage', 'onInteractionCreate', 'onVoiceStateUpdate', 'onGuildJoin', 'onGuildLeave'],
     disableAoiDB: true,
-    suppressAllErrors: false,
-    aoiLogs: true,
+    suppressAllErrors: true,
+    aoiLogs: false,
     shards: getInfo().SHARD_LIST,
     shardCount: getInfo().TOTAL_SHARDS,
 });
@@ -47,11 +47,11 @@ const handler = new Handler(
     __dirname
 );
 
-handler.loadCommands('./commands/client');
 handler.loadFunctions('./handler/functions');
 handler.loadStatuses('./handler/statuses.js');
 
 client.shard = new ClusterClient(client);
+client.loadCommands('./src/commands/client/', config.debug)
 client.loadVoiceEvents('./src/commands/player/', config.debug);
 
 const plugins = new Plugins({ client: client });

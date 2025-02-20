@@ -22,7 +22,7 @@ module.exports = [
         port: 1027,
         auth: "jmlitev4",
         secure: false
-    },
+    }/*,
     {
         // not loading thumbnails 
         // working = spotify + soundcloud + youtube 
@@ -32,4 +32,5 @@ module.exports = [
         auth: "https://alya-project.me/",
         secure: false
     }
+    */
 ];

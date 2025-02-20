@@ -1,25 +1,35 @@
 module.exports = {
     name: 'leave',
-    aliases: ['l', 'dc', 'disconnect'],
-    $if: "old",
+    type: "interaction",
+    prototype: "slash",
     code: `
-        Бот покинул голосовой канал.\n-# Чтобы добавить трек используйте .play <song>
-        $reply[$messageID;false]
+        $interactionReply[
+            Бот покинул голосовой канал.\n-# Чтобы добавить трек используйте </play\:$getApplicationCommandID[play;global]>
+            ;everyone;true;false
+        ]
 
-        $if[$hasPlayer==true&&$voiceId[$clientId]!=||$hasPlayer==true&&$voiceMemberCount[$voiceId[$clientId]]!=1||$hasPlayer==true&&$channelExists[$channelId]==true]
-            $deleteNowPlaying
-            $deleteMessage[$get[msgID];$channelID]
-            $destroyPlayer
-        $else
-            $disconnect
-        $endif
+        $leaveVC
+        $deleteNowPlaying
 
         $let[msgID;$readFile[./src/data/message.txt]]
 
-        $onlyIf[$voiceID[$clientID]!=;
-            Упс... Что-то пошло не так...\n-# Бот не подключен к голосовому каналу.
+        $onlyIf[$hasPlayer==true;
+            Упс... Что-то пошло не так...\n-# Бот ничего не проигрывает.
             {options:
-                {reply:$messageID}
+                {interaction}   
+            }
+            {extraOptions:
+                {ephemeral}
+            }
+        ]
+
+        $onlyIf[$voiceID!=;
+            Упс... Что-то пошло не так...\n-# Подключитесь к голосовому каналу.
+            {options:
+                {interaction}   
+            }
+            {extraOptions:
+                {ephemeral}
             }
         ]
     `

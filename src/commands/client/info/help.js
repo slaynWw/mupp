@@ -37,7 +37,7 @@ module.exports = [{
                 {author:Список команд}
                 {field:Utility:</help\:$getApplicationCommandID[help;global]>, </ping\:$getApplicationCommandID[ping;global]>:false}
                 {field:Fun:</send\:$getApplicationCommandID[send;global]>, </say\:$getApplicationCommandID[say;global]>, </roll\:$getApplicationCommandID[roll;global]>, </flip\:$getApplicationCommandID[flip;global]>:false}
-                {field:Music:\`.play <name/url>\`, \`.leave\`, \`.join\`, \`.previous\`, \`.skip\`, \`.status\`, \`.stop\`, \`.resume\`, \`.queue <page>\`:false}
+                {field:Music (Alpha test):</play\:$getApplicationCommandID[play;global]>, </queue\:$getApplicationCommandID[queue;global]>, </join\:$getApplicationCommandID[join;global]>, </leave\:$getApplicationCommandID[leave;global]>:false}
                 {color:$getMVar[embedColor]}
             }
             {actionRow:

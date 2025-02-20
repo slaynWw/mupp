@@ -1,15 +1,22 @@
 module.exports = {
     name: 'join',
-    aliases: ['c', 'connect', 'j'],
+    type: "interaction",
+    prototype: "slash",
     code: `
-        Бот подключился к каналу <#$voiceID>!\n-# Чтобы добавить трек используйте .play <song>
-        $reply[$messageID;false]
+        $interactionReply[
+            Бот подключился к каналу <#$voiceID>!\n-# Чтобы добавить трек используйте </play\:$getApplicationCommandID[play;global]>
+            ;everyone;true;false
+        ]
+
         $connect
 
         $onlyIf[$voiceID!=;
             Упс... Что-то пошло не так...\n-# Подключитесь к голосовому каналу.
             {options:
-                {reply:$messageID}
+                {interaction}   
+            }
+            {extraOptions:
+                {ephemeral}
             }
         ]
     `
