@@ -20,8 +20,12 @@ module.exports = [{
             {description:\`\`\`Не женщина, 16 лет, из Литвы.\`\`\`}
             {field:ПК:\`\`\`yaml\nCPU\: Ryzen 5 5600\nGPU\: ASUS DUAL RX6600\nRAM\: PATRIOT Viper 4 2x8GB\nROM\: ADATA LEGEND 960 1TB & NN SSD 512GB\nPSU\: COOLER MASTER 750W\nMB\: GIGABYTE B550 GAMING X V2\n\nOS(main)\: Windows11\nOS(for cs)\: Windows10\`\`\`:false}
             {field:Девайсы:\`\`\`yaml\nMice\: VGN Dradgofly F1 MOBA & 4k dongle\nKeyboard\: Dark Project KD104A\nMousepad\: Varmilo Daisy Desk \nMicrophone\: Fifine K669\nMonitor\: LENOVO LEGION R27FC-30\`\`\`:false}
-            {field:Ссылки:[cs2/cfg](https://google.com) [steam](https://steamcommunity.com/id/slaynWw/) [faceit](https://www.faceit.com/ru/players/SlaYn_x) [spotify](https://open.spotify.com/user/31arfxinfglqbibxcnfyxyadwb7q) [twitch](https://www.twitch.tv/slaynww):false}
             {color:$getMVar[embedColor]}
+        }
+        {actionRow:
+            {button:steam:link:https://steamcommunity.com/id/slaynWw/:false}
+            {button:faceit:link:https://www.faceit.com/ru/players/SlaYn_x:false}
+            {button:cfg/cs2:link:https://drive.google.com/file/d/1dC6GWqERUgaBzY5IEnPV9fxeK2kEqQeo/view?usp=sharing:false}
         }
         ;everyone;true;false
     ]

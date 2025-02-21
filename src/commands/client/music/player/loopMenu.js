@@ -1,5 +1,5 @@
 module.exports = [{
-    name: 'loopMenu',
+    name: 'loopMode',
     type: "interaction",
     prototype: "selectMenu",
     $if: "old",
@@ -11,7 +11,7 @@ module.exports = [{
         $onlyIf[$interactionData[values[0]]==queueMode;]
     `
 }, {
-    name: 'loopMenu',
+    name: 'loopMode',
     type: "interaction",
     prototype: "selectMenu",
     $if: "old",
@@ -21,5 +21,17 @@ module.exports = [{
         $loopMode[song]
 
         $onlyIf[$interactionData[values[0]]==songMode;]
+    `
+}, {
+    name: 'loopMode',
+    type: "interaction",
+    prototype: "selectMenu",
+    $if: "old",
+    code: `
+        $interactionReply[❌;everyone;true;false]
+
+        $loopMode[none]
+
+        $onlyIf[$interactionData[values[0]]==noneMode;]
     `
 }]

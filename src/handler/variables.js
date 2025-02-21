@@ -8,7 +8,9 @@ module.exports = {
             "spotify": "<:spotify:1342307966828675192>",
             "soundcloud": "<:soundcloud:1342308522754572338>",
             "youtube": "<:youtube:1342308059233652738>",
-            "gold": "<:gold:1342327846936514662>"
+            "gold": "<:gold:1342327846936514662>",
+            "discord": "<:discord:1342414536967192626>",
+            "qff": "<:qff:1342414492469821451>"
         },
 
     //user
@@ -16,14 +18,12 @@ module.exports = {
         gold: 0,
 
         //profile
+        profile: false,
         customBadges: "",
         fieldTitle: "Что-бы изменить используйте /profile и нажмите на меню ниже.",
         fieldDescription: "текст бокс для профиля пользователя в боте slxxxx.",
-        shkoloShieldBadge: "<:shkoloshield:1332377769459453962>",
-        shkoloShield2Badge: "<:shkoloshield2:1332377120143315015>",
     
         //stats
-        voiceTime: 0,
         messageCount: 0,
         commandsUsed: 0,
         sendedMessageCount: 0,

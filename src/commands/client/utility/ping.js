@@ -2,16 +2,33 @@ module.exports = [{
     name: "ping",
     type: "interaction",
     prototype: "slash",
+    $if: "old",
     code: `
-        $interactionReply[
-            {newEmbed:
-                {author:Pong! 🏓}
-                {field:Client latency:\`$interactionPingms\`:true}
-                {field:API latency:\`$round[$ping]ms ($guildShardID)\`:true}
-                {field:MongoDB latency:\`$round[$mongoPing]ms\`:false}
-                {footer:Total latency - $round[$sum[$sum[$messagePing;$ping];$mongoPing]]ms}
-                {color:$getMVar[embedColor]}
-            }
-        ]
+        $if[$voiceID[$clientID]==]
+
+            $interactionReply[
+                {newEmbed:
+                    {author:Pong! 🏓}
+                    {field:Client latency:\`$interactionPingms\`:true}
+                    {field:API latency:\`$round[$ping]ms ($guildShardID)\`:true}
+                    {field:MongoDB latency:\`$round[$mongoPing]ms\`:false}
+                    {color:$getMVar[embedColor]}
+                }
+            ]
+        
+        $else
+
+            $interactionReply[
+                {newEmbed:
+                    {author:Pong! 🏓}
+                    {field:Client latency:\`$interactionPingms\`:true}
+                    {field:Voice latency:\`$playerPingms\`:true}
+                    {field:API latency:\`$round[$ping]ms ($guildShardID)\`:true}
+                    {field:MongoDB latency:\`$round[$mongoPing]ms\`:false}
+                    {color:$getMVar[embedColor]}
+                }
+            ]
+
+        $endIf
     `
 }]

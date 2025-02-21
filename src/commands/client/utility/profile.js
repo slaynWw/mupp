@@ -6,7 +6,7 @@ module.exports = [{
         $interactionReply[
             {newEmbed:
                 {author:$userNickname[$guildID;$get[user];true]}
-                {field:В числе участников с\::<\:discord\:1330671429947101285> <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:R> — <\:qff\:1330670969169248256> <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID;ms];1000]]:R>:false}
+                {field:В числе участников с\:$getObjectProperty[emojis;discord] <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:R> — $getObjectProperty[emojis;qff] <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID;ms];1000]]:R>:false}
                 {field:$getUserMVar[fieldTitle;$get[user]]:$getUserMVar[fieldDescription;$get[user]]:false}
                 {thumbnail:$userAvatar[$get[user]]}
                 {image:$if[$userBanner[$get[user];4096;true;png]==null;$getMVar[line];$userBanner[$get[user];4096;true;png]]}
@@ -25,6 +25,8 @@ module.exports = [{
 
         $let[user;$if[$slashOption[user]==;$interactionData[author.id];$slashOption[user]]]
 
+        $createObject[emojis;$getMVar[emojis]]
+
         $onlyIf[$slashOption[user]==;]
     `
 }, {
@@ -35,7 +37,7 @@ module.exports = [{
         $interactionReply[
             {newEmbed:
                 {author:$userNickname[$guildID;$get[user];true]}
-                {field:В числе участников с\::<\:discord\:1330671429947101285> <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:R> — <\:qff\:1330670969169248256> <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID;ms];1000]]:R>:false}
+                {field:В числе участников с\:$getObjectProperty[emojis;discord] <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:R> — $getObjectProperty[emojis;qff] <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID;ms];1000]]:R>:false}
                 {field:$getUserMVar[fieldTitle;$get[user]]:$getUserMVar[fieldDescription;$get[user]]:false}
                 {thumbnail:$userAvatar[$get[user]]}
                 {image:$if[$userBanner[$get[user];4096;true;png]==null;$getMVar[line];$userBanner[$get[user];4096;true;png]]}
@@ -52,6 +54,8 @@ module.exports = [{
         $writeFile[./src/data/user.txt;$get[user]]
 
         $let[user;$if[$slashOption[user]==;$interactionData[author.id];$slashOption[user]]]
+
+        $createObject[emojis;$getMVar[emojis]]
 
         $onlyIf[$isBot[$slashOption[user]]==false;
             Упс... Что-то пошло не так...\n-# Упомянутый пользователь является ботом.
@@ -73,7 +77,7 @@ module.exports = [{
         $interactionUpdate[
             {newEmbed:
                 {author:$userNickname[$guildID;$get[user];true]}
-                {field:В числе участников с\::<\:discord\:1330671429947101285> <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:R> — <\:qff\:1330670969169248256> <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID;ms];1000]]:R>:false}
+                {field:В числе участников с\:$getObjectProperty[emojis;discord] <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:R> — $getObjectProperty[emojis;qff] <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID;ms];1000]]:R>:false}
                 {field:$getUserMVar[fieldTitle;$get[user]]:$getUserMVar[fieldDescription;$get[user]]:false}
                 {thumbnail:$userAvatar[$get[user]]}
                 {image:$if[$userBanner[$get[user];4096;true;png]==null;$getMVar[line];$userBanner[$get[user];4096;true;png]]}
@@ -88,6 +92,8 @@ module.exports = [{
             ;false;false
         ]
 
+        $createObject[emojis;$getMVar[emojis]]
+
         $let[user;$readFile[./src/data/user.txt]]
     `
 }, {
@@ -99,7 +105,7 @@ module.exports = [{
             {newEmbed:
                 {author:Статистика $userNickname[$guildID;$get[user];true]}
 
-                {field:Общяя статистика:Сообщений\: $getUserMVar[messageCount;$get[user]]\nВремя в голосовом канале\: $getUserMVar[voiceTime;$get[user]]:false}
+                {field:Общяя статистика:Сообщений\: $getUserMVar[messageCount;$get[user]]:false}
                 {field:Анонимные сообщения:Получено\: $getUserMVar[receivedMessageCount;$get[user]]\nОтправлено\: $getUserMVar[sendedMessageCount;$get[user]]:false}
 
                 {thumbnail:$userAvatar[$get[user]]}

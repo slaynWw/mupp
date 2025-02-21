@@ -8,7 +8,6 @@ module.exports = {
             ;everyone;true;false
         ]
 
-        $leaveVC
         $destroyPlayer
         $deleteNowPlaying
 

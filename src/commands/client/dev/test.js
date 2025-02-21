@@ -2,7 +2,7 @@ module.exports = {
     name: "test", 
     aliases: ["t"],
     code: `
-        $getObjectProperty[emojis;spotify]
+        $getObjectProperty[emojis;discord]
 
         $createObject[emojis;$getMVar[emojis]]
     `
