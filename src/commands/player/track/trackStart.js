@@ -7,10 +7,12 @@ module.exports = {
         $if[$hasPlayer==true&&$voiceId[$clientId]!=||$hasPlayer==true&&$voiceMemberCount[$voiceId[$clientId]]!=1||$hasPlayer==true&&$channelExists[$channelId]==true]
             $setNowPlaying[$get[ID]]
             $writeFile[./src/data/message.txt;$get[ID]]
-            $let[ID;$sendMessage[{newEmbed:{author:$songInfo[artist]}{description:[$songInfo[title]]($songInfo[url])}{field:Длительность:$songInfo[duration]:true}{field:Добавил:$songInfo[requester.mention]:true}{thumbnail:$songInfo[thumbnail]}{image:$getMVar[line]}{color:$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;ed3e3e];spotify;3eed46];soundcloud;ed843e]}}{actionRow:{selectMenu:loopMode:loopMode $loopStatus:1:1:false:{stringInput:none:noneMode::false:🔀}{stringInput:song:songMode::false:🔂}{stringInput:queue:queueMode::false:🔁}}}{actionRow:{button::secondary:previous:false:⏮️}{button::secondary:pauseresume:false:⏯️}{button::secondary:skip:false:⏭️}};true]]
+            $let[ID;$sendMessage[{newEmbed:{description:### $replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;$getObjectProperty[emojis;youtube]];spotify;$getObjectProperty[emojis;spotify]];soundcloud;$getObjectProperty[emojis;soundcloud]] [$songInfo[title]]($songInfo[url])}{field:Длительность:$songInfo[duration]:true}{field:Добавил:$songInfo[requester.mention]:true}{thumbnail:$songInfo[thumbnail]}{image:$getMVar[line]}{color:$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;ed3e3e];spotify;3eed46];soundcloud;ed843e]}}{actionRow:{selectMenu:loopMode:Repeat $loopStatus:1:1:false:{stringInput:off:noneMode::false:❌}{stringInput:queue:queueMode::false:🔁}{stringInput:single:songMode::false:🔂}}}{actionRow:{button::secondary:stop:false:⏹️}{button::secondary:previous:false:⏮️}{button::secondary:pauseresume:false:⏯️}{button::secondary:skip:false:⏭️}{button::secondary:queueButton:false:#️⃣}};true]]
         $else
-            $destroyPlayer
+            $leaveVC
         $endif
+
+        $createObject[emojis;$getMVar[emojis]]
     `
 };
 
@@ -18,8 +20,7 @@ module.exports = {
 
 $sendMessage[
     {newEmbed:
-        {author:$songInfo[artist]}
-        {description:[$songInfo[title]]($songInfo[url])}
+        {description:### $replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;$getObjectProperty[emojis;youtube]];spotify;$getObjectProperty[emojis;spotify]];soundcloud;$getObjectProperty[emojis;soundcloud]] [$songInfo[title]]($songInfo[url])}
         {field:Длительность:$songInfo[duration]:true}
         {field:Добавил:$songInfo[requester.mention]:true}
         {thumbnail:$songInfo[thumbnail]}
@@ -27,20 +28,25 @@ $sendMessage[
         {color:$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;ed3e3e];spotify;3eed46];soundcloud;ed843e]}
     }
     {actionRow:
-        {selectMenu:loopMode:loopMode $loopStatus:1:1:false:
-            {stringInput:none:noneMode::false:🔀}
-            {stringInput:song:songMode::false:🔂}
+        {selectMenu:loopMode:Repeat $loopStatus:1:1:false:
+            {stringInput:off:noneMode::false:❌}
             {stringInput:queue:queueMode::false:🔁}
+            {stringInput:single:songMode::false:🔂}
         }
     }
     {actionRow:
+        {button::secondary:stop:false:⏹️}
         {button::secondary:previous:false:⏮️}
-        {button::secondary:pauseresume:false:⏯️}
+        {button::secondary:pauseresume:false:⏸️}
         {button::secondary:skip:false:⏭️}
+        {button::secondary:queueButton:false:#️⃣}
     }
     ;true
 ]
 
-$sendMessage[{newEmbed:{author:$songInfo[artist]}{description:[$songInfo[title]]($songInfo[url])}{field:Длительность:$songInfo[duration]:true}{field:Добавил:$songInfo[requester.mention]:true}{thumbnail:$songInfo[thumbnail]}{image:$getMVar[line]}{color:$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;ed3e3e];spotify;3eed46];soundcloud;ed843e]}}{actionRow:{selectMenu:loopMode:loopMode $loopStatus:1:1:false:{stringInput:none:noneMode::false:🔀}{stringInput:song:songMode::false:🔂}{stringInput:queue:queueMode::false:🔁}}}{actionRow:{button::secondary:previous:false:⏮️}{button::secondary:pauseresume:false:⏯️}{button::secondary:skip:false:⏭️}};true]
+{newEmbed:{description:### $replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;$getObjectProperty[emojis;youtube]];spotify;$getObjectProperty[emojis;spotify]];soundcloud;$getObjectProperty[emojis;soundcloud]] [$songInfo[title]]($songInfo[url])}{field:Длительность:$songInfo[duration]:true}{field:Добавил:$songInfo[requester.mention]:true}{thumbnail:$songInfo[thumbnail]}{image:$getMVar[line]}{color:$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;ed3e3e];spotify;3eed46];soundcloud;ed843e]}}{actionRow:{selectMenu:loopMode:Repeat $loopStatus:1:1:false:{stringInput:off:noneMode::false:❌}{stringInput:queue:queueMode::false:🔁}{stringInput:single:songMode::false:🔂}}}{actionRow:{button::secondary:stop:false:⏹️}{button::secondary:previous:false:⏮️}{button::secondary:pauseresume:false:⏸️}{button::secondary:skip:false:⏭️}{button::secondary:queueButton:false:#️⃣}}
 
+$sendMessage[{newEmbed:{description:### $replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;$getObjectProperty[emojis;youtube]];spotify;$getObjectProperty[emojis;spotify]];soundcloud;$getObjectProperty[emojis;soundcloud]] [$songInfo[title]]($songInfo[url])}{field:Длительность:$songInfo[duration]:true}{field:Добавил:$songInfo[requester.mention]:true}{thumbnail:$songInfo[thumbnail]}{image:$getMVar[line]}{color:$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;ed3e3e];spotify;3eed46];soundcloud;ed843e]}}{actionRow:{selectMenu:loopMode:Repeat $loopStatus:1:1:false:{stringInput:off:noneMode::false:❌}{stringInput:queue:queueMode::false:🔁}{stringInput:single:songMode::false:🔂}}}{actionRow:{button::secondary:stop:false:⏹️}{button::secondary:previous:false:⏮️}{button::secondary:pauseresume:false:⏯️}{button::secondary:skip:false:⏭️}{button::secondary:queueButton:false:#️⃣}};true]
+
+$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;$getObjectProperty[youtube]];spotify;$getObjectProperty[spotify]];soundcloud;$getObjectProperty[soundcloud]]
 */

@@ -1,14 +1,14 @@
 module.exports = {
-    name: 'queueButton',
+    name: "queue",
     type: "interaction",
     prototype: "button",
+    $if: "old",
     code: `
         $interactionReply[
             {newEmbed:
                 {author:Очередь $guildName[$guildID]}
                 {thumbnail:$guildIcon}
-                {description:Очередь из $queueLength трека/треков ($queueDuration)\n$queue[1;20;{position}. [{title}]({url})]}
-                {footer:Чтобы узнать больше, используй /queue <page>}
+                {description:Очередь из $queueLength трека/треков ($queueDuration)\n$queue[$if[$slashOption[page]==;1;$slashOption[page]];20;{position}. [{title}]({url})]}
                 {color:$getMVar[embedColor]}
             }
             ;everyone;true;false
@@ -24,6 +24,4 @@ module.exports = {
             }
         ]
     `
-};
-
-//$queue[1;20;{position}. [{title}]({url})]
+}

@@ -9,6 +9,7 @@ module.exports = {
         ]
 
         $leaveVC
+        $destroyPlayer
         $deleteNowPlaying
 
         $let[msgID;$readFile[./src/data/message.txt]]

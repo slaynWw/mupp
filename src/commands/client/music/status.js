@@ -6,17 +6,15 @@ module.exports = {
         $interactionReply[
             {newEmbed:
                 {author:Lavalink nodes}
-                {field:Ajieblogs (secured):$get[1]:false}
-                {field:Embotic (non-secured):$get[2]:true}
-                {field:Oreshi (non-secured):$get[3]:true}
+                {field:Muzykant:$get[1]:true}
+                {field:Ajiedev:$get[2]:true}
                 {field:Предупреждение!:Без рабочих нод, не будет работать музыка в боте.\nВ боте используются бесплатные ноды от других людей,\nтак что возможны лаги во время проигрывания музыки.:false}
                 {color:$getMVar[embedColor]}
             }
             ;everyone;true;false
         ]
 
-        $let[1;$replaceText[$replaceText[$nodeInfo[Ajieblogs;status];online;🟢 online];offline;🔴 offline]]
-        $let[2;$replaceText[$replaceText[$nodeInfo[Embotic;status];online;🟢 online];offline;🔴 offline]]
-        $let[3;$replaceText[$replaceText[$nodeInfo[Oreshi;status];online;🟢 online];offline;🔴 offline]]
+        $let[1;$replaceText[$replaceText[$nodeInfo[Muzykant;status];online;🟢 online];offline;🔴 offline] $nodeInfo[Muzykant;player.used]/$nodeInfo[Muzykant;player.total]]
+        $let[2;$replaceText[$replaceText[$nodeInfo[Ajiedev v4;status];online;🟢 online];offline;🔴 offline] $nodeInfo[Ajiedev v4;player.used]/$nodeInfo[Ajiedev v4;player.total]]
     `
 };

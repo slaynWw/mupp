@@ -1,7 +1,20 @@
 module.exports = {
     ownerID: "529790206195269632",
 
+    //client
+        //setup
+        helpMenu: {},
+        emojis: {
+            "spotify": "<:spotify:1342307966828675192>",
+            "soundcloud": "<:soundcloud:1342308522754572338>",
+            "youtube": "<:youtube:1342308059233652738>",
+            "gold": "<:gold:1342327846936514662>"
+        },
+
     //user
+        //economy
+        gold: 0,
+
         //profile
         customBadges: "",
         fieldTitle: "Что-бы изменить используйте /profile и нажмите на меню ниже.",

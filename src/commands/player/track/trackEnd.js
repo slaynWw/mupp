@@ -8,7 +8,7 @@ module.exports = {
             $deleteNowPlaying
             $deleteMessage[$get[msgID];$channelID]
         $else
-            $destroyPlayer
+            $leaveVC
         $endif
 
         $let[msgID;$readFile[./src/data/message.txt]]

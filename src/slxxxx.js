@@ -13,7 +13,7 @@ const client = new AoiClient({
     events: ['onMessage', 'onInteractionCreate', 'onVoiceStateUpdate', 'onGuildJoin', 'onGuildLeave'],
     disableAoiDB: true,
     suppressAllErrors: true,
-    aoiLogs: false,
+    aoiLogs: config.debug,
     shards: getInfo().SHARD_LIST,
     shardCount: getInfo().TOTAL_SHARDS,
 });

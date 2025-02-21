@@ -84,14 +84,8 @@ module.exports = {
             
         $endIF
 
-        $onlyIf[$voiceID!=;
-            Упс... Что-то пошло не так...\n-# Подключитесь к голосовому каналу.
-            {options:
-                {interaction}   
-            }
-            {extraOptions:
-                {ephemeral}
-            }
-        ]
+        $onlyIf[$get[SAMEVOICE]==true;Упс... Что-то пошло не так...\n-# Бот находится в другом голосовом канале.{options:{interaction}}{extraOptions:{ephemeral}}]
+        $let[SAMEVOICE;$replaceText[$replaceText[$hasPlayer;true;$checkCondition[$voiceId[$authorId]==$voiceId[$clientId]]];false;true]]
+        $onlyIf[$voiceId[$authorId]!=;Упс... Что-то пошло не так...\n-# Подключитесь к голосовому каналу.{options:{interaction}}{extraOptions:{ephemeral}}]
     `
 };
