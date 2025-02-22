@@ -1,6 +1,9 @@
 module.exports = (client) => {
-    client.on('ready', async () => {
-        console.log(`            
+  client.readyCommand({
+    channel: "",
+    code: `
+      $let[fontReg;$registerFont[/src/handler/fonts/HypatiaSansPro-Semibold.ttf;hypatiasanspro]]
+      $log[
   ██████  ██▓    ▒██   ██▒▒██   ██▒▒██   ██▒▒██   ██▒
 ▒██    ▒ ▓██▒    ▒▒ █ █ ▒░▒▒ █ █ ▒░▒▒ █ █ ▒░▒▒ █ █ ▒░
 ░ ▓██▄   ▒██░    ░░  █   ░░░  █   ░░░  █   ░░░  █   ░
@@ -10,6 +13,7 @@ module.exports = (client) => {
 ░ ░▒  ░ ░░ ░ ▒  ░░░   ░▒ ░░░   ░▒ ░░░   ░▒ ░░░   ░▒ ░
 ░  ░  ░    ░ ░    ░    ░   ░    ░   ░    ░   ░    ░  
       ░      ░  ░ ░    ░   ░    ░   ░    ░   ░    ░  
-        `);
-    });
+      ]
+    `
+  });
 }

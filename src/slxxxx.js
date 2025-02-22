@@ -2,6 +2,7 @@ const config = require('./config');
 const { AoiClient } = require('aoi.js');
 const aoimongo = require("aoi.mongodb");
 const { Plugins } = require("scootz.js");
+const { AoiCanvas } = require("aoi.canvas");
 const { Handler } = require("aoi.js-handler");
 const { Manager } = require('aoijs.lavalink');
 const { ClusterClient, getInfo } = require('discord-hybrid-sharding');
@@ -12,7 +13,7 @@ const client = new AoiClient({
     intents: ['Guilds', 'GuildMessages', 'GuildVoiceStates', 'DirectMessages', 'MessageContent'],
     events: ['onMessage', 'onInteractionCreate', 'onVoiceStateUpdate', 'onGuildJoin', 'onGuildLeave'],
     disableAoiDB: true,
-    suppressAllErrors: false,
+    suppressAllErrors: true,
     aoiLogs: config.debug,
     shards: getInfo().SHARD_LIST,
     shardCount: getInfo().TOTAL_SHARDS,
@@ -47,11 +48,13 @@ const handler = new Handler(
     __dirname
 );
 
+const canvas = new AoiCanvas(client);
+
 handler.loadFunctions('./handler/functions');
 handler.loadStatuses('./handler/statuses.js');
 
 client.shard = new ClusterClient(client);
-client.loadCommands('./src/commands/client/', config.debug)
+client.loadCommands('./src/commands/client/', config.debug);
 client.loadVoiceEvents('./src/commands/player/', config.debug);
 
 const plugins = new Plugins({ client: client });

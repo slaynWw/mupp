@@ -6,7 +6,6 @@ module.exports = [{
 
         $setUserMVar[customBadges;$message[2];$get[user]]
 
-
         $let[user;$replaceText[$replaceText[$replaceText[$message[1];<;];@;];>;]]
 
         $onlyIF[$message[2]!=;

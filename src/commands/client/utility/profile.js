@@ -106,6 +106,7 @@ module.exports = [{
                 {author:Статистика $userNickname[$guildID;$get[user];true]}
 
                 {field:Общяя статистика:Сообщений\: $getUserMVar[messageCount;$get[user]]:false}
+                {field:Типы:Получено\: $getUserMVar[getTips;$get[user]]\nТипнуто\: $getUserMVar[playerTipped;$get[user]]:false}
                 {field:Анонимные сообщения:Получено\: $getUserMVar[receivedMessageCount;$get[user]]\nОтправлено\: $getUserMVar[sendedMessageCount;$get[user]]:false}
 
                 {thumbnail:$userAvatar[$get[user]]}

@@ -7,6 +7,7 @@ module.exports = {
     mongoDB: process.env.MONGODB,
     debug: process.env.DEBUG === 'true' ? true : false,
     nodes: require('./nodes.js'),
+    fonts: require('./fonts.js'),
     logs: require('./logs.js'),
     loader: require('./loader.js')
 };
