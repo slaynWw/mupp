@@ -8,7 +8,8 @@ module.exports = {
 
             $interactionFollowUp[
                 {newEmbed:
-                    {description:[$songInfo[title]]($songInfo[url]) - $songInfo[duration]\n-# Успешно добавлено в очередь!}
+                    {author:$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;YouTube];spotify;Spotify];soundcloud;Soundcloud]:$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;$getMVar[yticon]];spotify;$getMVar[sficon]];soundcloud;$getMVar[scicon]]}
+                    {description:Трек [$songInfo[title]]($songInfo[url]) добавлен в очередь.}
                     {color:$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;ed3e3e];spotify;3eed46];soundcloud;ed843e]}
                 }
                 ;true;false
@@ -48,7 +49,8 @@ module.exports = {
 
             $interactionFollowUp[
                 {newEmbed:
-                    {description:[$songInfo[title;$sum[$get[QUEUE];1]]]($songInfo[url;$sum[$get[QUEUE];1]]) - $songInfo[duration;$sum[$get[QUEUE];1]]\n-# Успешно добавлено в очередь!}
+                    {author:$replaceText[$replaceText[$replaceText[$songInfo[platform;$sum[$get[QUEUE];1]];youtube;YouTube];spotify;Spotify];soundcloud;Soundcloud]:$replaceText[$replaceText[$replaceText[$songInfo[platform;$sum[$get[QUEUE];1]];youtube;$getMVar[yticon]];spotify;$getMVar[sficon]];soundcloud;$getMVar[scicon]]}
+                    {description:Трек [$songInfo[title;$sum[$get[QUEUE];1]]]($songInfo[url;$sum[$get[QUEUE];1]]) добавлен в очередь.}
                     {color:$replaceText[$replaceText[$replaceText[$songInfo[platform;$sum[$get[QUEUE];1]];youtube;ed3e3e];spotify;3eed46];soundcloud;ed843e]}
                 }
                 ;true;false

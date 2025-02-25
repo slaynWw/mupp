@@ -21,11 +21,12 @@ module.exports = [{
             ;everyone;false;false
         ]
 
-        $writeFile[./src/data/user.txt;$get[user]]
-
-        $let[user;$if[$slashOption[user]==;$interactionData[author.id];$slashOption[user]]]
-
         $createObject[emojis;$getMVar[emojis]]
+
+        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
+
+        $writeFile[./src/data/user.txt;$get[user]]
+        $let[user;$if[$slashOption[user]==;$interactionData[author.id];$slashOption[user]]]
 
         $onlyIf[$slashOption[user]==;]
     `
@@ -105,7 +106,7 @@ module.exports = [{
             {newEmbed:
                 {author:Статистика $userNickname[$guildID;$get[user];true]}
 
-                {field:Общяя статистика:Сообщений\: $getUserMVar[messageCount;$get[user]]:false}
+                {field:Общяя статистика:Сообщений отправлено\: $getUserMVar[messageCount;$get[user]]\nКоманд использовано\: $getUserMVar[commandsUsed;$get[user]]:false}
                 {field:Типы:Получено\: $getUserMVar[getTips;$get[user]]\nТипнуто\: $getUserMVar[playerTipped;$get[user]]:false}
                 {field:Анонимные сообщения:Получено\: $getUserMVar[receivedMessageCount;$get[user]]\nОтправлено\: $getUserMVar[sendedMessageCount;$get[user]]:false}
 

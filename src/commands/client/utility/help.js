@@ -16,6 +16,8 @@ module.exports = [{
 
         $interactionDefer[true]
 
+        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
+
         $if[$getGuildMVar[helpMenu;$guildID]==]
             
             $setGuildMVar[helpMenu;$getObject[helpMenu;true];$guildID]

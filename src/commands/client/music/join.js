@@ -10,6 +10,8 @@ module.exports = {
 
         $connect
 
+        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
+
         $onlyIf[$voiceID!=;
             Упс... Что-то пошло не так...\n-# Подключитесь к голосовому каналу.
             {options:

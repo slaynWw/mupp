@@ -6,15 +6,15 @@ module.exports = {
         $interactionReply[
             {newEmbed:
                 {author:Lavalink nodes}
-                {field:Muzykant:$get[1]:true}
-                {field:Ajiedev:$get[2]:true}
-                {field:Предупреждение!:Без рабочих нод, не будет работать музыка в боте.\nВ боте используются бесплатные ноды от других людей,\nтак что возможны лаги во время проигрывания музыки.:false}
+                {field:Eternal:$get[1]:true}
+                {field:Почему только одна нода?:А пошёл ты нахуй, больше бабок на сервак мне впадлу тратить.:false}
                 {color:$getMVar[embedColor]}
             }
             ;everyone;true;false
         ]
 
-        $let[1;$replaceText[$replaceText[$nodeInfo[Muzykant;status];online;🟢 online];offline;🔴 offline] $nodeInfo[Muzykant;player.used]/$nodeInfo[Muzykant;player.total]]
-        $let[2;$replaceText[$replaceText[$nodeInfo[Ajiedev v4;status];online;🟢 online];offline;🔴 offline] $nodeInfo[Ajiedev v4;player.used]/$nodeInfo[Ajiedev v4;player.total]]
+        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
+
+        $let[1;$replaceText[$replaceText[$nodeInfo[Eternal;status];online;🟢 online];offline;🔴 offline] $nodeInfo[Eternal;player.used]/$nodeInfo[Eternal;player.total]]
     `
 };

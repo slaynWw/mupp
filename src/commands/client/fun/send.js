@@ -45,6 +45,8 @@ module.exports = [{
         $setUserMVar[receivedMessageCount;$sum[$getUserMVar[receivedMessageCount;$get[user]];1];$get[user]]
         $setUserMVar[sendedMessageCount;$sum[$getUserMVar[sendedMessageCount;$interactionData[author.id]];1];$interactionData[author.id]]
 
+        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
+
         $let[user;$readFile[./src/data/recipient.txt]]
     `
 }]

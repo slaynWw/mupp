@@ -9,8 +9,43 @@ module.exports = {
             "gold": "<:gold:1342327846936514662>",
             "discord": "<:discord:1342414536967192626>",
             "qff": "<:qff:1342414492469821451>",
-            "shards": "<:shards:1342543982210584618>"
+            "shards": "<:shards:1342543982210584618>",
+            "blackheart": "<a:blackheart:1343065377004978238>",
+            "whiteheart": "<a:whiteheart:1343065327285702677>",
+            "greyheart": "<a:greyheart:1343065313666793553>",
+            "butterfly": "<a:butterfly:1343065347019903079>",
+            "heartarrow": "<a:heartarrow:1343065301646049391>",
+            "onigiri": "<a:onigiri:1343065225439477890>",
+            "whitebow": "<a:whitebow:1343065214450536528>",
+            "heartspakles": "<a:heartspakles:1343065201926340648>",
+            "whiteumbrella": "<a:whiteumbrella:1343065191205568572>",
+            "torodrink": "<a:torodrink:1343065142715220008>",
+            "pixelmoth": "<a:pixelmoth:1343065100319330345>",
+            "angelwings": "<a:angelwings:1343065091855089787>",
+            "whiterose": "<a:whiterose:1343065083248644126>",
+            "divinerapier": "<:divinerapier:1343083635712069674>",
+            "animalcourier": "<:animalcourier:1343083643039514624>",
+            "madstone": "<:madstone:1343083650010320906>",
+            "aegis": "<:aegis:1343083656763281438>",
+            "aghanimsblessing": "<:aghanimsblessing:1343083665227386952>",
+            "handofmidas": "<:handofmidas:1343083673297092672>",
+            "aghanimsshard": "<:aghanimsshard:1343083680423477278>",
+            "bookofagility": "<:bookofagility:1343094671697514498>",
+            "bookofintelligence": "<:bookofintelligence:1343094663581536328>",
+            "bookofstrength": "<:bookofstrength:1343094657084817479>",
+            "agility": "<:agility:1343096236068311160>",
+            "intelligence": "<:intelligence:1343096230321848350>",
+            "strength": "<:strength:1343096222046486569>",
+            "universal": "<:universal:1343176264151863356>",
+            "ogre_magi": "<:ogre_magi:1343185579889655839>",
+            "shadow_fiend": "<:shadow_fiend:1343187648230981694>",
+            "venomancer": "<:venomancer:1343187779093270549>",
+            "outworld_destroyer": "<:outworld_destroyer:1343187786194354227>"
         }]
+
+        $setMVar[tippedImage;https://cdn.discordapp.com/attachments/1263969081967775764/1343252319285936258/tipped1.png?ex=67bc98b5&is=67bb4735&hm=797072df8323f6e07abbc628381d38f07b8c718a2e74d113fd181a268f3c9e1d&width=298&height=141]
+
+        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$authorID];1];$authorID]
 
         $onlyIF[529790206195269632==$authorID;
             Упс... Что-то пошло не так...\n-# Вы не являетесь разработчиком бота.

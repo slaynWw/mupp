@@ -13,7 +13,7 @@ const client = new AoiClient({
     intents: ['Guilds', 'GuildMessages', 'GuildVoiceStates', 'DirectMessages', 'MessageContent'],
     events: ['onMessage', 'onInteractionCreate', 'onVoiceStateUpdate', 'onGuildJoin', 'onGuildLeave'],
     disableAoiDB: true,
-    suppressAllErrors: true,
+    suppressAllErrors: config.supressErrors,
     aoiLogs: config.debug,
     shards: getInfo().SHARD_LIST,
     shardCount: getInfo().TOTAL_SHARDS,
@@ -39,6 +39,9 @@ new Manager(client, {
     noLimitVolume: false
 });
 
+client.shard = new ClusterClient(client);
+
+const canvas = new AoiCanvas(client);
 const handler = new Handler(
     {
         client: client,
@@ -48,16 +51,12 @@ const handler = new Handler(
     __dirname
 );
 
-const canvas = new AoiCanvas(client);
+require("./handler/ready.js")(client);
 
 handler.loadFunctions('./handler/functions');
 handler.loadStatuses('./handler/statuses.js');
-
-client.shard = new ClusterClient(client);
 client.loadCommands('./src/commands/client/', config.debug);
 client.loadVoiceEvents('./src/commands/player/', config.debug);
 
 const plugins = new Plugins({ client: client });
 plugins.loadPlugins();
-
-require("./handler/ready.js")(client);

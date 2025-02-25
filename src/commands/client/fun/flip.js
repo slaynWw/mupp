@@ -8,5 +8,7 @@ module.exports = [{
             ;false;false
         ]
         $interactionDefer[false]
+
+        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
     `
 }] 

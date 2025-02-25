@@ -18,5 +18,7 @@ module.exports = [{
             $textInputValue[messageInput]\n
             ;everyone;false;false
         ]
+
+        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
     `
 }]

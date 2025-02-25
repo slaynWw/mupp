@@ -3,11 +3,13 @@ module.exports = [{
     code: `
     $getMVar[banner]
     $addSelectMenu[1;string;menuID;Выберите пункт;1;1;false;
-        Роли:Цветные роли.:rolesID:false:<a\:whiterose\:1328770133274919083>;
-        slxnqq?:Инфа, конфиги и т.п.:ownerID:false:<a\:butterflies\:1327681585658597396>;
-        О сервере:Инфа чтоб легче освоится.:guildID:false:<a\:Ribbon\:1327682663024300103>;
-        Оптимизация ПК:Чтоб жизнь козалось красочней.:optimizationID:false:<a\:spinningheart\:1327682841252724757>
+        Роли:Цветные роли.:rolesID:false:$nonEscape[$getObjectProperty[emojis;whiterose]];
+        slxnqq?:Инфа, конфиги и т.п.:ownerID:false:$nonEscape[$getObjectProperty[emojis;butterfly]];
+        О сервере:Инфа чтоб легче освоится.:guildID:false:$nonEscape[$getObjectProperty[emojis;whitebow]];
+        Оптимизация ПК:Чтоб жизнь козалось красочней.:optimizationID:false:$nonEscape[$getObjectProperty[emojis;whiteheart]]
     ]
+
+    $createObject[emojis;$getMVar[emojis]]
     `
 }, {
     name: "menuID",
@@ -15,7 +17,7 @@ module.exports = [{
     prototype: "selectMenu",
     code: `
     $interactionReply[
-        {newEmbed:
+        {newEmbed:s
             {author:slaynww/slxnqq/даня:$userAvatar[529790206195269632]}
             {description:\`\`\`Не женщина, 16 лет, из Литвы.\`\`\`}
             {field:ПК:\`\`\`yaml\nCPU\: Ryzen 5 5600\nGPU\: ASUS DUAL RX6600\nRAM\: PATRIOT Viper 4 2x8GB\nROM\: ADATA LEGEND 960 1TB & NN SSD 512GB\nPSU\: COOLER MASTER 750W\nMB\: GIGABYTE B550 GAMING X V2\n\nOS(main)\: Windows11\nOS(for cs)\: Windows10\`\`\`:false}
@@ -40,12 +42,14 @@ module.exports = [{
     $interactionReply[
         {actionRow:
             {selectMenu:guildList:Что вас интересует?:1:1:false:
-                {stringInput:Правила:rulesID::false:<a\:Ribbon\:1327682663024300103>}
-                {stringInput:Роли на сервере:rolesListID::false:<a\:whiterose\:1328770133274919083>}
+                {stringInput:Правила:rulesID::false:$nonEscape[$getObjectProperty[emojis;whitebow]]}
+                {stringInput:Роли на сервере:rolesListID::false:$nonEscape[$getObjectProperty[emojis;whiterose]]}
             }
         }
         ;everyone;true;false
     ]
+
+    $createObject[emojis;$getMVar[emojis]]
 
     $onlyIf[$interactionData[values[0]]==guildID;]
     `

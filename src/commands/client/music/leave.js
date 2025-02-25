@@ -13,6 +13,8 @@ module.exports = {
 
         $let[msgID;$readFile[./src/data/message.txt]]
 
+        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
+
         $onlyIf[$hasPlayer==true;
             Упс... Что-то пошло не так...\n-# Бот ничего не проигрывает.
             {options:
