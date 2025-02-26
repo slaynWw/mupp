@@ -7,11 +7,7 @@ module.exports = {
         $if[$hasPlayer==false&&$playerStatus==destroyed||$hasPlayer==false&&$playerStatus==stopped]
 
             $interactionFollowUp[
-                {newEmbed:
-                    {author:$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;YouTube];spotify;Spotify];soundcloud;Soundcloud]:$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;$getMVar[yticon]];spotify;$getMVar[sficon]];soundcloud;$getMVar[scicon]]}
-                    {description:Трек [$songInfo[title]]($songInfo[url]) добавлен в очередь.}
-                    {color:$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;ed3e3e];spotify;3eed46];soundcloud;ed843e]}
-                }
+                Трек [$songInfo[title]]($songInfo[url]) добавлен в очередь.
                 ;true;false
             ]
 
@@ -48,11 +44,7 @@ module.exports = {
         $else
 
             $interactionFollowUp[
-                {newEmbed:
-                    {author:$replaceText[$replaceText[$replaceText[$songInfo[platform;$sum[$get[QUEUE];1]];youtube;YouTube];spotify;Spotify];soundcloud;Soundcloud]:$replaceText[$replaceText[$replaceText[$songInfo[platform;$sum[$get[QUEUE];1]];youtube;$getMVar[yticon]];spotify;$getMVar[sficon]];soundcloud;$getMVar[scicon]]}
-                    {description:Трек [$songInfo[title;$sum[$get[QUEUE];1]]]($songInfo[url;$sum[$get[QUEUE];1]]) добавлен в очередь.}
-                    {color:$replaceText[$replaceText[$replaceText[$songInfo[platform;$sum[$get[QUEUE];1]];youtube;ed3e3e];spotify;3eed46];soundcloud;ed843e]}
-                }
+                Трек [$songInfo[title;$sum[$get[QUEUE];1]]]($songInfo[url;$sum[$get[QUEUE];1]]) добавлен в очередь.
                 ;true;false
             ]
 

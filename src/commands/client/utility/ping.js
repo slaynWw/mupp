@@ -4,32 +4,17 @@ module.exports = [{
     prototype: "slash",
     $if: "old",
     code: `
-        $if[$voiceID[$clientID]==]
+        $interactionReply[
+            {newEmbed:
+                {title:Cluster 1}
+                {description:Bot latency\: \`$interactionPingms\`\nDatabase latency\: \`$round[$mongoPing]ms\`\nDiscord API latency\: \`$round[$ping]ms\` (Shard \`$guildShardID\`)}
+                {footer:All latency $round[$get[ping]]ms}
+                {color:$getMVar[embedColor]}
+            }
+            ;everyone;false;false
+        ]
 
-            $interactionReply[
-                {newEmbed:
-                    {author:Pong! 🏓}
-                    {field:Client latency:\`$interactionPingms\`:true}
-                    {field:API latency:\`$round[$ping]ms ($guildShardID)\`:true}
-                    {field:MongoDB latency:\`$round[$mongoPing]ms\`:false}
-                    {color:$getMVar[embedColor]}
-                }
-            ]
-        
-        $else
-
-            $interactionReply[
-                {newEmbed:
-                    {author:Pong! 🏓}
-                    {field:Client latency:\`$interactionPingms\`:true}
-                    {field:Voice latency:\`$playerPingms\`:true}
-                    {field:API latency:\`$round[$ping]ms ($guildShardID)\`:true}
-                    {field:MongoDB latency:\`$round[$mongoPing]ms\`:false}
-                    {color:$getMVar[embedColor]}
-                }
-            ]
-
-        $endIf
+        $let[ping;$sum[$sum[$interactionPing;$mongoPing];$ping]]
 
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
     `
