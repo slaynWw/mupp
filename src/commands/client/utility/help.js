@@ -22,7 +22,7 @@ module.exports = [{
             
             $setGuildMVar[helpMenu;$getObject[helpMenu;true];$guildID]
 
-            $createObject[helpMenu;{"Utility": {"help": "</help:$getApplicationCommandID[help;global]>","ping": "</ping:$getApplicationCommandID[ping;global]>","profile": "</profile:$getApplicationCommandID[profile;global]>"},"Fun": {"flip": "</flip:$getApplicationCommandID[flip;global]>","roll": "</roll:$getApplicationCommandID[roll;global]>","say": "</say:$getApplicationCommandID[say;global]>","send": "</send:$getApplicationCommandID[send;global]>"},"Music": {"play": "</play:$getApplicationCommandID[play;global]>","queue": "</queue:$getApplicationCommandID[queue;global]>","join": "</join:$getApplicationCommandID[join;global]>","leave": "</leave:$getApplicationCommandID[leave;global]>","status": "</status:$getApplicationCommandID[status;global]>","lyrics": "</lyrics:$getApplicationCommandID[lyrics;global]>"}}]
+            $createObject[helpMenu;{"Utility": {"help": "</help:$getApplicationCommandID[help;global]>","ping": "</ping:$getApplicationCommandID[ping;global]>","profile": "</profile:$getApplicationCommandID[profile;global]>"},"Fun": {"flip": "</flip:$getApplicationCommandID[flip;global]>","roll": "</roll:$getApplicationCommandID[roll;global]>","say": "</say:$getApplicationCommandID[say;global]>","send": "</send:$getApplicationCommandID[send;global]>"},"Music": {"play": "</play:$getApplicationCommandID[play;global]>","queue": "</queue:$getApplicationCommandID[queue;global]>","join": "</join:$getApplicationCommandID[join;global]>","leave": "</leave:$getApplicationCommandID[leave;global]>","status": "</status:$getApplicationCommandID[status;global]>","lyrics": "</lyrics:$getApplicationCommandID[lyrics;global]>", "nowplaying": "</nowplaying:$getApplicationCommandID[nowplaying;global]>"}}]
 
         $else
 
@@ -52,7 +52,7 @@ module.exports = [{
                 {author:Список команд}
                 {field:Utility:$getObjectProperty[helpMenu;Utility.help], $getObjectProperty[helpMenu;Utility.ping], $getObjectProperty[helpMenu;Utility.profile]:false}
                 {field:Fun:$getObjectProperty[helpMenu;Fun.flip], $getObjectProperty[helpMenu;Fun.roll], $getObjectProperty[helpMenu;Fun.say], $getObjectProperty[helpMenu;Fun.send]:false}
-                {field:Music (Alpha test):$getObjectProperty[helpMenu;Music.play], $getObjectProperty[helpMenu;Music.join], $getObjectProperty[helpMenu;Music.leave], $getObjectProperty[helpMenu;Music.queue], $getObjectProperty[helpMenu;Music.status], $getObjectProperty[helpMenu;Music.lyrics]:false}
+                {field:Music (Alpha test):$getObjectProperty[helpMenu;Music.play], $getObjectProperty[helpMenu;Music.join], $getObjectProperty[helpMenu;Music.leave], $getObjectProperty[helpMenu;Music.queue], $getObjectProperty[helpMenu;Music.status], $getObjectProperty[helpMenu;Music.lyrics], $getObjectProperty[helpMenu;Music.nowplaying]:false}
                 {color:$getMVar[embedColor]}
             }
             {actionRow:

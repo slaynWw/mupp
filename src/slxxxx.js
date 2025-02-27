@@ -33,7 +33,7 @@ new Manager(client, {
     debug: config.debug,
     voiceConnectionTimeout: 60,
     reconnectInterval: 20,
-    reconnectTries: 200,
+    reconnectTries: 10,
     userAgent: 'slxxxx',
     moveOnDisconnect: true,
     noLimitVolume: false

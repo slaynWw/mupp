@@ -13,29 +13,7 @@ module.exports = {
 
             $interactionDefer[true]
 
-            $if[$checkContains[$slashOption[song];https://open.spotify.com/]==true]
-                $playTrack[$nonEscape[$slashOption[song]];spotify]
-            $endIF
-
-            $if[$checkContains[$slashOption[song];https://www.youtube.com/]==true]
-                $playTrack[$nonEscape[$slashOption[song]];youtube]
-            $endIF
-
-            $if[$checkContains[$slashOption[song];https://music.youtube.com/]==true]
-                $playTrack[$nonEscape[$slashOption[song]];youtube]
-            $endIF
-
-            $if[$checkContains[$slashOption[song];https://soundcloud.com/]==true]
-                $playTrack[$nonEscape[$slashOption[song]];soundcloud]
-            $endIF
-
-            $if[$checkContains[$slashOption[song];https://on.soundcloud.com/]==true]
-                $playTrack[$nonEscape[$slashOption[song]];soundcloud]
-            $endIF
-
-            $if[$isValidLink[$slashOption[song]]==false]
-                $playTrack[$slashOption[song];youtube]
-            $endIF
+            $playTrack[$nonEscape[$slashOption[song]]]
 
             $writeFile[./src/data/channel.txt;$channelID]
 
@@ -50,29 +28,7 @@ module.exports = {
 
             $interactionDefer[true]
 
-            $if[$checkContains[$slashOption[song];https://open.spotify.com/]==true]
-                $playTrack[$nonEscape[$slashOption[song]];spotify]
-            $endIF
-
-            $if[$checkContains[$slashOption[song];https://www.youtube.com/]==true]
-                $playTrack[$nonEscape[$slashOption[song]];youtube]
-            $endIF
-
-            $if[$checkContains[$slashOption[song];https://music.youtube.com/]==true]
-                $playTrack[$nonEscape[$slashOption[song]];youtube]
-            $endIF
-
-            $if[$checkContains[$slashOption[song];https://soundcloud.com/]==true]
-                $playTrack[$nonEscape[$slashOption[song]];soundcloud]
-            $endIF
-
-            $if[$checkContains[$slashOption[song];https://on.soundcloud.com/]==true]
-                $playTrack[$nonEscape[$slashOption[song]];soundcloud]
-            $endIF
-
-            $if[$isValidLink[$slashOption[song]]==false]
-                $playTrack[$slashOption[song];youtube]
-            $endIF
+            $playTrack[$nonEscape[$slashOption[song]]]
 
             $let[QUEUE;$textTrim[$replaceText[$replaceText[$checkCondition[$isCurrentExists==false];false;$queueLength];true;-1]]]
             

@@ -3,7 +3,28 @@ module.exports = {
 
     //client
         //setup
-        helpMenu: {},
+        helpMenu: {
+            "Utility": {
+                "help": "</help:$getApplicationCommandID[help;global]>",
+                "ping": "</ping:$getApplicationCommandID[ping;global]>",
+                "profile": "</profile:$getApplicationCommandID[profile;global]>"
+            },
+            "Fun": {
+                "flip": "</flip:$getApplicationCommandID[flip;global]>",
+                "roll": "</roll:$getApplicationCommandID[roll;global]>",
+                "say": "</say:$getApplicationCommandID[say;global]>",
+                "send": "</send:$getApplicationCommandID[send;global]>"
+            },
+            "Music": {
+                "play": "</play:$getApplicationCommandID[play;global]>",
+                "queue": "</queue:$getApplicationCommandID[queue;global]>",
+                "join": "</join:$getApplicationCommandID[join;global]>",
+                "leave": "</leave:$getApplicationCommandID[leave;global]>",
+                "status": "</status:$getApplicationCommandID[status;global]>",
+                "lyrics": "</lyrics:$getApplicationCommandID[lyrics;global]>",
+                "nowplaying": "</lyrics:$getApplicationCommandID[nowplaying;global]>"
+            }
+        },
         emojis: {
             "spotify": "<:spotify:1342307966828675192>",
             "soundcloud": "<:soundcloud:1342308522754572338>",
