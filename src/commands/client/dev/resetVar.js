@@ -6,6 +6,8 @@ module.exports = {
             "spotify": "<:spotify:1342307966828675192>",
             "soundcloud": "<:soundcloud:1342308522754572338>",
             "youtube": "<:youtube:1342308059233652738>",
+            "vkmusic": "<:vkmusic:1345388303834288169>",
+            "yandexmusic": "<:yandexmusic:1345422426237960254>",
             "gold": "<:gold:1342327846936514662>",
             "discord": "<:discord:1342414536967192626>",
             "qff": "<:qff:1342414492469821451>",
@@ -42,8 +44,6 @@ module.exports = {
             "venomancer": "<:venomancer:1343187779093270549>",
             "outworld_destroyer": "<:outworld_destroyer:1343187786194354227>"
         }]
-
-        $setMVar[tippedImage;https://cdn.discordapp.com/attachments/1263969081967775764/1343252319285936258/tipped1.png?ex=67bc98b5&is=67bb4735&hm=797072df8323f6e07abbc628381d38f07b8c718a2e74d113fd181a268f3c9e1d&width=298&height=141]
 
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$authorID];1];$authorID]
 

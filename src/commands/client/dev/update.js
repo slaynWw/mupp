@@ -4,9 +4,9 @@ module.exports = [{
     code: `
     $author[Команды успешно перезагружены!]
 	$addField[MongoDB latency;\`$round[$mongoPing]ms\`;false]
-    $addField[API latency;\`$round[$ping]ms\`;true]
+    $addField[API latency;\`$round[$guildShardPing]ms\`;true]
     $addField[Client latency;\`$round[$messagePing]ms\`;true]
-    $footer[Total latency - $round[$sum[$sum[$messagePing;$ping];$mongoPing]]ms]
+    $footer[Total latency - $round[$sum[$sum[$messagePing;$guildShardPing];$mongoPing]]ms]
     $color[$getMVar[embedColor]]
     $reply[$messageID;false]
 

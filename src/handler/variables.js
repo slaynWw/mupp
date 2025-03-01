@@ -29,6 +29,8 @@ module.exports = {
             "spotify": "<:spotify:1342307966828675192>",
             "soundcloud": "<:soundcloud:1342308522754572338>",
             "youtube": "<:youtube:1342308059233652738>",
+            "vkmusic": "<:vkmusic:1345388303834288169>",
+            "yandexmusic": "<:yandexmusic:1345422426237960254>",
             "gold": "<:gold:1342327846936514662>",
             "discord": "<:discord:1342414536967192626>",
             "qff": "<:qff:1342414492469821451>",

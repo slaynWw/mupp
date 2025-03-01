@@ -28,7 +28,7 @@ module.exports = [{
         }
     ]
     $onlyIf[$hasPlayer==true;
-        Упс... Что-то пошло не так...\n-# Сейчас отсутствует. Ипользуйте </play\:$getApplicationCommandID[play;global]> что-бы добавить трек.
+        Упс... Что-то пошло не так...\n-# Бот даже не подключен к голосовому каналу. Ипользуйте </play\:$getApplicationCommandID[play;global]> что-бы добавить трек.
         {options:
             {interaction}   
         }

@@ -10,10 +10,13 @@ module.exports = {
                 Трек [$songInfo[title]]($songInfo[url]) добавлен в очередь.
                 ;true;false
             ]
-
             $interactionDefer[true]
 
-            $playTrack[$nonEscape[$slashOption[song]]]
+            $if[$isValidLink[$slashOption[song]]==true]
+                $playTrack[$nonEscape[$slashOption[song]]]
+            $else
+                $playTrack[$nonEscape[$slashOption[song]];youtube]
+            $endIf
 
             $writeFile[./src/data/channel.txt;$channelID]
 
@@ -25,14 +28,19 @@ module.exports = {
                 Трек [$songInfo[title;$sum[$get[QUEUE];1]]]($songInfo[url;$sum[$get[QUEUE];1]]) добавлен в очередь.
                 ;true;false
             ]
-
             $interactionDefer[true]
 
-            $playTrack[$nonEscape[$slashOption[song]]]
+            $if[$isValidLink[$slashOption[song]]==true]
+                $playTrack[$nonEscape[$slashOption[song]]]
+            $else
+                $playTrack[$nonEscape[$slashOption[song]];youtube]
+            $endIf
 
             $let[QUEUE;$textTrim[$replaceText[$replaceText[$checkCondition[$isCurrentExists==false];false;$queueLength];true;-1]]]
             
         $endIF
+
+        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
 
         $onlyIf[$get[SAMEVOICE]==true;Упс... Что-то пошло не так...\n-# Бот находится в другом голосовом канале.{options:{interaction}}{extraOptions:{ephemeral}}]
         $let[SAMEVOICE;$replaceText[$replaceText[$hasPlayer;true;$checkCondition[$voiceId[$authorId]==$voiceId[$clientId]]];false;true]]

@@ -10,5 +10,5 @@ module.exports = {
     nodes: require('./nodes.js'),
     logs: require('./logs.js'),
     loader: require('./loader.js'),
-    supressErrors: process.env.SUPRESSERRORS
+    errors: process.env.ERRORS === 'true' ? true : false
 };

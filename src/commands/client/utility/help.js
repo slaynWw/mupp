@@ -9,6 +9,7 @@ module.exports = [{
             {actionRow:
                 {selectMenu:helpMenu:Выберите категорию:1:1:false:
                     {stringInput:Список команд:cmdList::false:<a\:moth\:1328770041747079178>}
+                    {stringInput:Музыка (v0.0.1):musicHelp::false:<a\:onigiri\:1343065225439477890>}
                 } 
             }
             ;true;false
@@ -38,6 +39,7 @@ module.exports = [{
             {actionRow:
                 {selectMenu:helpMenu:Выберите категорию:1:1:false:
                     {stringInput:Список команд:cmdList::false:<a\:moth\:1328770041747079178>}
+                    {stringInput:Музыка (v0.0.1):musicHelp::false:<a\:onigiri\:1343065225439477890>}
                 }
             }
         ]
@@ -63,5 +65,29 @@ module.exports = [{
         $createObject[helpMenu;$getGuildMVar[helpMenu;$guildID]]
 
         $onlyIf[$interactionData[values[0]]==cmdList;]
+    `
+}, {
+    name: "helpMenu",
+    type: "interaction",
+    prototype: "selectMenu",
+    code: `
+        $interactionUpdate[
+            {newEmbed:
+                {title:Музыка}
+                {field:Предупреждение!:На данный момент вся музыка в боте тестируется, если что то\nне так, пишите мне в лс <@$getMVar[ownerID]>\n\nЕсли хотите поспособствовать добавлению в бота полной\nподдержки $getObjectProperty[emojis;vkmusic] VK Музыки и $getObjectProperty[emojis;yandexmusic] Yandex Музыки, можете мне\nпомочь с созданием русских аккантов на данных платформах.:false}
+                {field:Доступные платформы:$getObjectProperty[emojis;spotify] Spotify⠀⠀$getObjectProperty[emojis;soundcloud] SoundCloud⠀⠀$getObjectProperty[emojis;youtube] YouTube:false}
+                {field:Полу-доступные платформы:$getObjectProperty[emojis;vkmusic] VK Музыка:false}
+                {field:Доступные команды:$getObjectProperty[helpMenu;Music.play], $getObjectProperty[helpMenu;Music.join], $getObjectProperty[helpMenu;Music.leave], $getObjectProperty[helpMenu;Music.queue], $getObjectProperty[helpMenu;Music.status], $getObjectProperty[helpMenu;Music.lyrics], $getObjectProperty[helpMenu;Music.nowplaying]:false}
+                {color:$getMVar[embedColor]}
+            }
+            {actionRow:
+                {button::secondary:backID:false:↩️}
+            }
+        ]
+
+        $createObject[emojis;$getMVar[emojis]]
+        $createObject[helpMenu;$getGuildMVar[helpMenu;$guildID]]
+
+        $onlyIf[$interactionData[values[0]]==musicHelp;]
     `
 }];

@@ -17,7 +17,7 @@ module.exports = {
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
 
         $onlyIf[$queueLength!=0;
-            Упс... Что-то пошло не так...\n-# Музыкальная очередь пуста! Ипользуйте </play\:$getApplicationCommandID[play;global]> что-бы добавить трек.
+            Упс... Что-то пошло не так...\n-# Это единственный трек в очереди! Чтобы добавить трек используйте </play\:$getApplicationCommandID[play;global]>.
             {options:
                 {interaction}   
             }

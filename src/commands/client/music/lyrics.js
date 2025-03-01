@@ -15,5 +15,15 @@ module.exports = {
         $interactionDefer[false]
 
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
+
+        $onlyIf[$lyrics[$slashOption[title];lyrics]!=;
+            Упс... Что-то пошло не так...\n-# Трек который вы искали не имеет текста на Youtube Music.
+            {options:
+                {interaction}   
+            }
+            {extraOptions:
+                {ephemeral}
+            }
+        ]
     `
 };

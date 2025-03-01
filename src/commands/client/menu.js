@@ -20,8 +20,8 @@ module.exports = [{
         {newEmbed:s
             {author:slaynww/slxnqq/даня:$userAvatar[529790206195269632]}
             {description:\`\`\`Не женщина, 16 лет, из Литвы.\`\`\`}
-            {field:ПК:\`\`\`yaml\nCPU\: Ryzen 5 5600\nGPU\: ASUS DUAL RX6600\nRAM\: PATRIOT Viper 4 2x8GB\nROM\: ADATA LEGEND 960 1TB & NN SSD 512GB\nPSU\: COOLER MASTER 750W\nMB\: GIGABYTE B550 GAMING X V2\n\nOS(main)\: Windows11\nOS(for cs)\: Windows10\`\`\`:false}
-            {field:Девайсы:\`\`\`yaml\nMice\: VGN Dradgofly F1 MOBA & 4k dongle\nKeyboard\: Dark Project KD104A\nMousepad\: Varmilo Daisy Desk \nMicrophone\: Fifine K669\nMonitor\: LENOVO LEGION R27FC-30\`\`\`:false}
+            {field:ПК:\`\`\`yaml\nCPU\: Ryzen 5 5600\nGPU\: ASUS DUAL RX6600\nRAM\: PATRIOT Viper 4 2x8GB\nROM\: ADATA LEGEND 960 1TB & NN SSD 512GB\nPSU\: COOLER MASTER 750W\nMB\: GIGABYTE B550 GAMING X V2\n\nOS(main)\: Windows11\nOS(cs2)\: Windows10\`\`\`:false}
+            {field:Девайсы:\`\`\`yaml\nMice\: VGN Dradgofly F1 MOBA & 4k dongle\nKeyboard\: Dark Project KD104A\nMousepad\: Varmilo Daisy Desk \nMicrophone\: Fifine K669\nMonitor\: LENOVO LEGION R27FC-30 240Hz\`\`\`:false}
             {color:$getMVar[embedColor]}
         }
         {actionRow:

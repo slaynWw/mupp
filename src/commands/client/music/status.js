@@ -5,19 +5,18 @@ module.exports = {
     code: `
         $interactionReply[
             {newEmbed:
-                {author:Lavalink nodes}
-                {field:ChalresNaig:$get[1]:true}
-                {field:slxxxx:$get[2]:true}
+                {author:Статус "серверов" нод.}
+                {description:Нод по крайней мере на данный момент\nбольше не будет, по той причине что пошли\nвы нахуй, деньги у меня не резиновые, а\nгодных бесплатных нод особо ненайдёшь.}
+                {field:slxxxx:$replaceText[$replaceText[$nodeInfo[slxxxx;status];online;online 🟢];offline;offline 🔴]⠀⠀$nodeInfo[slxxxx;player.used]/$nodeInfo[slxxxx;player.total] 🎤:true}
                 {color:$getMVar[embedColor]}
             }
             ;everyone;true;false
         ]
 
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
-
-        $let[1;$replaceText[$replaceText[$nodeInfo[ChalresNaig;status];online;🟢 online];offline;🔴 offline] $nodeInfo[ChalresNaig;player.used]/$nodeInfo[ChalresNaig;player.total]]
-        $let[2;$replaceText[$replaceText[$nodeInfo[slxxxx;status];online;🟢 online];offline;🔴 offline] $nodeInfo[slxxxx;player.used]/$nodeInfo[slxxxx;player.total]]
     `
 };
 
 //{field:Почему только одна нода?:А пошёл ты нахуй, больше бабок на сервак мне впадлу тратить.:false}
+
+//$replaceText[$replaceText[$nodeInfo[ChalresNaig;status];online;🟢 online];offline;🔴 offline]
