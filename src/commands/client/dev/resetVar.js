@@ -45,6 +45,8 @@ module.exports = {
             "outworld_destroyer": "<:outworld_destroyer:1343187786194354227>"
         }]
 
+        $setMVar[tippedImage;https://raw.githubusercontent.com/slaynWw/slxxxx/refs/heads/main/src/data/tipBackground.png?token=GHSAT0AAAAAAC5EKG43JK6LZ7NUC4TLQ7FGZ6HRFMQ]
+
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$authorID];1];$authorID]
 
         $onlyIF[529790206195269632==$authorID;

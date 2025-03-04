@@ -111,7 +111,7 @@ module.exports = {
         scicon: "https://cdn.discordapp.com/attachments/1263969081967775764/1344013441668747335/SoundCloud-Logo.png?ex=67bf5d8f&is=67be0c0f&hm=ca2a0693ec526a7f878b686f76e60300d5199aca203643e70e3fbc94d5e0fc28&",
         sficon: "https://cdn.discordapp.com/attachments/1263969081967775764/1344013428230197341/Spotify_Primary_Logo_RGB_Green.png?ex=67bf5d8b&is=67be0c0b&hm=7cb0c71c47496f5361e638e3864cdf44b42a544f6e3263379b3ffe0caca3562c&",
         yticon: "https://cdn.discordapp.com/attachments/1263969081967775764/1344013465790058578/social-06-512.png?ex=67bf5d94&is=67be0c14&hm=1b2a9754cfb1acc0e51d57729b8d770183a9fa38560a585939ad8eb27f2e442a&",
-        tippedImage: "https://cdn.discordapp.com/attachments/1263969081967775764/1343252319285936258/tipped1.png?ex=67bc98b5&is=67bb4735&hm=797072df8323f6e07abbc628381d38f07b8c718a2e74d113fd181a268f3c9e1d&width=298&height=141",
+        tippedImage: "https://raw.githubusercontent.com/slaynWw/slxxxx/refs/heads/main/src/data/tipBackground.png?token=GHSAT0AAAAAAC5EKG43JK6LZ7NUC4TLQ7FGZ6HRFMQ",
         line: "https://cdn.discordapp.com/attachments/1263969081967775764/1324336436467466302/dbaa74710a2b3110.png?ex=678e316b&is=678cdfeb&hm=1b6349940fbb6924df493f13b523dabbdfbc7226cfbf9441637158b81c677a44&",
         banner: "https://cdn.discordapp.com/attachments/1263969081967775764/1335237138949607556/navigation_new.png?ex=679f6ffd&is=679e1e7d&hm=a71e345daeeca4cef23e27432de84c2fffc3004d4849629c4c618aa27baa051e&",
         rolesBanner: "https://cdn.discordapp.com/attachments/1263969081967775764/1335237126463426711/roles_new.png?ex=679f6ffa&is=679e1e7a&hm=4e5fb067cf863130fb328d2ff0fb81fffaaf01960e3bcaf86202f335bd143973&"

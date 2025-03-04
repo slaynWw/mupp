@@ -10,7 +10,7 @@ module.exports = {
             $fillText[tipped;$get[username1];$get[color1];20px hypatiasanspro;74;161;128;center]
             $drawImage[tipped;$nonEscape[$userAvatar[$authorID;;false;png]];12;12;124;124]
 
-            $drawImage[tipped;;0;0;373;176]
+            $drawImage[tipped;$getMVar[tippedImage];0;0;373;176]
 
         $createCanvas[tipped;373;176]
 
