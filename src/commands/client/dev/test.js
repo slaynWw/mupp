@@ -14,12 +14,9 @@ module.exports = {
 
             $drawImage[tipped;$getMVar[tippedImage];0;0;373;176]
 
+            $filter[tipped;set;blur;5]
+
         $createCanvas[tipped;373;176]
-
-        $setUserMVar[getTips;$sum[$getUserMVar[getTips;$get[user]];1];$get[user]]
-        $setUserMVar[playerTipped;$sum[$getUserMVar[playerTipped;$authorID];1];$authorID]
-
-        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$authorID];1];$authorID]
 
         $let[username2;$if[$userNickname[$guildID;$get[user];false]==;$username[$get[user]];$userNickname[$guildID;$get[user];false]]]
         $let[username1;$if[$userNickname[$guildID;$authorID;false]==;$username[$authorID];$userNickname[$guildID;$authorID;false]]]
