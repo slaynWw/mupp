@@ -2,28 +2,27 @@ module.exports = {
     name: "test", 
     aliases: ["t"],
     code: `
-        $sendMessage[{attachment:tip.png:./src/data/tipped.png};false]
+        $sendMessage[{actionRow:{selectMenu:loopMode:Repeat none:1:1:false:{stringInput:off:noneMode::true:❌}{stringInput:queue:queueMode::false:🔁}{stringInput:single:songMode::false:🔂}}}{actionRow:{button::secondary:stop:false:⏹️}{button::secondary:previous:false:⏮️}{button::secondary:pauseresume:false:⏸️}{button::secondary:skip:false:⏭️}{button::secondary:queueButton:false:#️⃣}}{attachment:player.png:./src/data/player.png};false]
+        
+        $downloadCanvas[player;./src/data/player.png]
+            $drawImage[player;$get[platform];12;12;24;24]
+            $fillText[player;$get[title];#ffffff;25px productsansbold;12;160]
+            $fillText[player;$get[author];#b8b8b8;13px productsansregular;12;176]
+            $drawImage[player;$getObjectProperty[playerImages;blackGradient];0;-81;400;400;10]
+            $drawImage[player;$getObjectProperty[playerImages;black];0;-81;400;400;10]
+            $filter[player;remove;blur]
 
-        $downloadCanvas[tipped;./src/data/tipped.png]
+            $drawImage[player;$get[thumbnail];0;-81;400;400;10]
+            $filter[player;set;blur;2]
+        $createCanvas[player;400;188]
 
-            $fillText[tipped;$get[username2];$get[color2];20px hypatiasanspro;299;161;128;center]
-            $drawImage[tipped;$nonEscape[$userAvatar[$get[user];;false;png]];237;12;124;124]
+        $let[title;$songInfo[title]]
+        $let[author;$songInfo[author]]
+        $let[thumbnail;$songInfo[thumbnail]]
+        $let[platform;$replaceText[$replaceText[$replaceText[$songInfo[platform];spotify;$getObjectProperty[playerImages;spotify]];soundcloud;$getObjectProperty[playerImages;soundcloud]];youtube;$getObjectProperty[playerImages;youtube]]]
+        $let[voice;$channelName[$voiceID[$authorID]]]
 
-            $fillText[tipped;$get[username1];$get[color1];20px hypatiasanspro;74;161;128;center]
-            $drawImage[tipped;$nonEscape[$userAvatar[$authorID;;false;png]];12;12;124;124]
-
-            $drawImage[tipped;$getMVar[tippedImage];0;0;373;176]
-
-            $filter[tipped;set;blur;5]
-
-        $createCanvas[tipped;373;176]
-
-        $let[username2;$if[$userNickname[$guildID;$get[user];false]==;$username[$get[user]];$userNickname[$guildID;$get[user];false]]]
-        $let[username1;$if[$userNickname[$guildID;$authorID;false]==;$username[$authorID];$userNickname[$guildID;$authorID;false]]]
-        $let[user;$authorID]
-
-        $let[color2;$randomText[#2757b3;#44a57b;#880788;#9e9f0e;#b45004]]
-        $let[color1;$randomText[#b3638a;#788838;#458f9f;#02781f;#805504]]
+        $createObject[playerImages;$getMVar[playerImages]]
 
         $onlyIF[529790206195269632==$authorID;
             Упс... Что-то пошло не так...\n-# Вы не являетесь разработчиком бота.

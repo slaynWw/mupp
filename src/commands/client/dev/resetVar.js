@@ -45,6 +45,16 @@ module.exports = {
             "outworld_destroyer": "<:outworld_destroyer:1343187786194354227>"
         }]
 
+        $setMVar[playerImages;{
+            "voiceIcon": "https://i.imgur.com/sRzcj3i.png",
+            "voiceBackground": "https://i.imgur.com/iMt73MN.png",
+            "blackGradient": "https://i.imgur.com/9SOPb1b.png",
+            "black": "https://i.imgur.com/9LkGIdH.png",
+            "spotify": "https://i.imgur.com/NTzhQVc.png",
+            "soundcloud": "https://i.imgur.com/o4qexDv.png",
+            "youtube": "https://i.imgur.com/rEfFvRl.png"
+        }]
+
         $setMVar[tippedImage;https://i.imgur.com/KyeedWg.png]
 
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$authorID];1];$authorID]
