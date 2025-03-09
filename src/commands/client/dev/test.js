@@ -2,6 +2,8 @@ module.exports = {
     name: "test", 
     aliases: ["t"],
     code: `
+        $sendMessage[{attachment:tip.png:./src/data/tipped.png};false]
+
         $downloadCanvas[tipped;./src/data/tipped.png]
 
             $fillText[tipped;$get[username2];$get[color2];20px hypatiasanspro;299;161;128;center]
