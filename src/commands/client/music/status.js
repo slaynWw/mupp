@@ -5,14 +5,16 @@ module.exports = {
     code: `
         $interactionReply[
             {newEmbed:
-                {author:Статус "серверов" нод.}
-                {description:Нод по крайней мере на данный момент\nбольше не будет, по той причине что пошли\nвы нахуй, деньги у меня не резиновые, а\nгодных бесплатных нод особо ненайдёшь.}
-                {field:slxxxx:$replaceText[$replaceText[$nodeInfo[slxxxx;status];online;online 🟢];offline;offline 🔴]⠀⠀$nodeInfo[slxxxx;player.used]/$nodeInfo[slxxxx;player.total] 🎤:true}
+                {author:Amethyst Node:https://i.imgur.com/gNQsSaP.png}
+                {field:Статус:$replaceText[$replaceText[$nodeInfo[Amethyst;status];online;online 🟢];offline;offline 🔴]:true}
+                {field:Плеер:$nodeInfo[Amethyst;player.used]/1:true}
+                {field:Локация:Лондон, Великобритания:true}
                 {color:$getMVar[embedColor]}
             }
             ;everyone;true;false
         ]
 
+        $createObject[emojis;$getMVar[emojis]]
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
     `
 };

@@ -1,4 +1,4 @@
-const config = require('./config');
+const config = require('./config/index.js');
 const { AoiClient } = require('aoi.js');
 const aoimongo = require("aoi.mongodb");
 const { Plugins } = require("scootz.js");
@@ -34,7 +34,7 @@ new Manager(client, {
     voiceConnectionTimeout: 60,
     reconnectInterval: 20,
     reconnectTries: 10,
-    userAgent: 'slxxxx',
+    userAgent: 'mupp',
     moveOnDisconnect: true,
     noLimitVolume: false
 });

@@ -4,11 +4,11 @@ module.exports = {
     prototype: "slash",
     code: `
         $interactionReply[
-            Бот покинул голосовой канал.\n-# Чтобы добавить трек используйте </play\:$getApplicationCommandID[play;global]>
+            <:leave:1350311181973192834> <@$clientID> покинул <#$voiceID>
             ;everyone;true;false
         ]
 
-        $destroyPlayer
+        $disconnect
         $deleteNowPlaying
 
         $let[msgID;$readFile[./src/data/message.txt]]

@@ -1,5 +1,5 @@
 module.exports = [{
-    name: "eval",
+    name: "z",
     aliases: ["e"],
     code: `
     

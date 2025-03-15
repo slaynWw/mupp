@@ -4,12 +4,12 @@ module.exports = [{
     prototype: "slash",
     code: `
         $interactionFollowUp[
-            {attachment:tip.png:./src/data/tipped.png}
+            {attachment:tip.png:./src/data/images/tipped.png}
             ;false;false
         ]
         $interactionDefer[false]
 
-        $downloadCanvas[tipped;./src/data/tipped.png]
+        $downloadCanvas[tipped;./src/data/images/tipped.png]
 
             $fillText[tipped;$get[username2];$get[color2];20px hypatiasanspro;299;161;128;center]
             $drawImage[tipped;$nonEscape[$userAvatar[$get[user];;false;png]];237;12;124;124]

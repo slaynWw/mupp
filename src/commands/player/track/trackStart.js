@@ -7,9 +7,9 @@ module.exports = {
         $if[$hasPlayer==true&&$voiceId[$clientId]!=||$hasPlayer==true&&$voiceMemberCount[$voiceId[$clientId]]!=1||$hasPlayer==true&&$channelExists[$channelId]==true]
             $setNowPlaying[$get[ID]]
             $writeFile[./src/data/message.txt;$get[ID]]
-            $let[ID;$sendMessage[{actionRow:{selectMenu:loopMode:Repeat none:1:1:false:{stringInput:off:noneMode::true:❌}{stringInput:queue:queueMode::false:🔁}{stringInput:single:songMode::false:🔂}}}{actionRow:{button::secondary:stop:false:⏹️}{button::secondary:previous:false:⏮️}{button::secondary:pauseresume:false:⏸️}{button::secondary:skip:false:⏭️}{button::secondary:queueButton:false:#️⃣}}{attachment:player.png:./src/data/player.png};true]]
+            $let[ID;$sendMessage[{actionRow:{selectMenu:loopMode:Repeat none:1:1:false:{stringInput:off:noneMode::true:$getObjectProperty[interface;false]}{stringInput:queue:queueMode::false:🔁}{stringInput:single:songMode::false:🔂}}}{actionRow:{button::secondary:stop:false:$getObjectProperty[interface;stop]}{button::secondary:previous:false:$getObjectProperty[interface;previous]}{button::secondary:pauseresume:false:$getObjectProperty[interface;pauseresume]}{button::secondary:skip:false:$getObjectProperty[interface;skip]}{button::secondary:queueButton:false:$getObjectProperty[interface;queue]}}{attachment:player.png:./src/data/images/player.png};true]]
         
-            $downloadCanvas[player;./src/data/player.png]
+            $downloadCanvas[player;./src/data/images/player.png]
                 $drawImage[player;$get[platform];12;12;24;24]
                 $fillText[player;$get[title];#ffffff;25px productsansbold;12;158]
                 $fillText[player;$get[author];#b8b8b8;13px productsansregular;12;176]
@@ -31,6 +31,7 @@ module.exports = {
         $endif
 
         $createObject[playerImages;$getMVar[playerImages]]
+        $createObject[interface;$getMVar[interface]]
         $createObject[emojis;$getMVar[emojis]]
     `
 };

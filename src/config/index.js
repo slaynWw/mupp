@@ -2,6 +2,7 @@ require('dotenv').config();
 
 module.exports = {
     token: process.env.TOKEN,
+    token1: process.env.TOKEN1,
     clientId: process.env.CLIENT_ID,
     prefix: process.env.PREFIX,
     mongoDB: process.env.MONGODB,

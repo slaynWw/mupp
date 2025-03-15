@@ -6,7 +6,7 @@ module.exports = [{
     code: `
         $interactionReply[
             {newEmbed:
-                {title:Cluster 1}
+                {author:Amethyst:https://i.imgur.com/gNQsSaP.png}
                 {description:Bot latency\: \`$interactionPingms\`\nDatabase latency\: \`$round[$mongoPing]ms\`\nDiscord API latency\: \`$round[$guildShardPing]ms\` (Shard \`$guildShardID\`)}
                 {footer:All latency $round[$get[ping]]ms}
                 {color:$getMVar[embedColor]}
@@ -15,6 +15,7 @@ module.exports = [{
         ]
 
         $let[ping;$sum[$sum[$interactionPing;$mongoPing];$guildShardPing]]
+        $createObject[interface;$getMVar[interface]]
 
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
     `

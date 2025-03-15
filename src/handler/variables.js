@@ -47,25 +47,7 @@ module.exports = {
             "torodrink": "<a:torodrink:1343065142715220008>",
             "pixelmoth": "<a:pixelmoth:1343065100319330345>",
             "angelwings": "<a:angelwings:1343065091855089787>",
-            "whiterose": "<a:whiterose:1343065083248644126>",
-            "divinerapier": "<:divinerapier:1343083635712069674>",
-            "animalcourier": "<:animalcourier:1343083643039514624>",
-            "madstone": "<:madstone:1343083650010320906>",
-            "aegis": "<:aegis:1343083656763281438>",
-            "aghanimsblessing": "<:aghanimsblessing:1343083665227386952>",
-            "handofmidas": "<:handofmidas:1343083673297092672>",
-            "aghanimsshard": "<:aghanimsshard:1343083680423477278>",
-            "bookofagility": "<:bookofagility:1343094671697514498>",
-            "bookofintelligence": "<:bookofintelligence:1343094663581536328>",
-            "bookofstrength": "<:bookofstrength:1343094657084817479>",
-            "agility": "<:agility:1343096236068311160>",
-            "intelligence": "<:intelligence:1343096230321848350>",
-            "strength": "<:strength:1343096222046486569>",
-            "universal": "<:universal:1343176264151863356>",
-            "ogre_magi": "<:ogre_magi:1343185579889655839>",
-            "shadow_fiend": "<:shadow_fiend:1343187648230981694>",
-            "venomancer": "<:venomancer:1343187779093270549>",
-            "outworld_destroyer": "<:outworld_destroyer:1343187786194354227>"
+            "whiterose": "<a:whiterose:1343065083248644126>"
         },
         playerImages: {
             "voiceIcon": "https://i.imgur.com/sRzcj3i.png",
@@ -75,6 +57,23 @@ module.exports = {
             "spotify": "https://i.imgur.com/NTzhQVc.png",
             "soundcloud": "https://i.imgur.com/o4qexDv.png",
             "youtube": "https://i.imgur.com/rEfFvRl.png"
+        },
+        interface: {
+            "leave": "<:leave:1350311181973192834>",
+            "join": "<:join:1350311174389891195>",
+            "true": "<:true:1350311221232140319>",
+            "false": "<:false:1350311167750307930>",
+            "cluster": "<:cluster:1350306173957570590>",
+            "shard": "<:shard:1350306300499857459>",
+            "optimization": "<:optimization:1350311195474661399>",
+            "aboutme": "<:aboutme:1350308915660718152>",
+            "customization": "<:customization:1350311152835493888>",
+            "error": "<:error:1350311161631084617>",
+            "previous": "<:previous:1350326766673203200>",
+            "skip": "<:skip:1350326778169659432>",
+            "pauseresume": "<:pauseresume:1350326791168069654>",
+            "stop": "<:stop:1350326807395827712>",
+            "queue": "<:queue:1350327151773225032>"
         },
 
     //user
@@ -109,8 +108,8 @@ module.exports = {
         receivedMessageCount: 0, //получено анонимных сообщений
 
     //embed
-        embedColor: "e6e6e6",
-        embedError: "a3a3a3",
+        embedColor: "b9bec9",
+        embedError: "c9b9b9",
         bronzeColor: "#b76014",
         silverColor: "#b1e0e7",
         goldColor: "#d3b221",

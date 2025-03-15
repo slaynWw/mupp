@@ -4,10 +4,10 @@ module.exports = {
     prototype: "slash",
     code: `
         $interactionReply[
-            Бот подключился к каналу <#$voiceID>!\n-# Чтобы добавить трек используйте </play\:$getApplicationCommandID[play;global]>
+            <:join:1350311174389891195> <@$clientID> подключился к <#$voiceID>
             ;everyone;true;false
         ]
-
+        $setDeafen[true]
         $connect
 
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
