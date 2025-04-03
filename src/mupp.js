@@ -1,7 +1,7 @@
-const config = require('./config/index.js');
-const { AoiClient } = require('aoi.js');
+const config = require('./config');
+const { Plugins } = require("mupp.js");
 const aoimongo = require("aoi.mongodb");
-const { Plugins } = require("scootz.js");
+const { AoiClient } = require('aoi.js');
 const { AoiCanvas } = require("aoi.canvas");
 const { Handler } = require("aoi.js-handler");
 const { Manager } = require('aoijs.lavalink');
@@ -10,7 +10,7 @@ const { ClusterClient, getInfo } = require('discord-hybrid-sharding');
 const client = new AoiClient({
     token: config.token,
     prefix: config.prefix,
-    intents: ['Guilds', 'GuildMessages', 'GuildVoiceStates', 'DirectMessages', 'MessageContent'],
+    intents: ['Guilds', 'GuildMessages', 'GuildPresences', 'GuildVoiceStates', 'DirectMessages', 'MessageContent'],
     events: ['onMessage', 'onInteractionCreate', 'onVoiceStateUpdate', 'onGuildJoin', 'onGuildLeave'],
     disableAoiDB: true,
     suppressAllErrors: config.errors,
@@ -27,9 +27,9 @@ aoimongo.setup({
 
 new Manager(client, {
     nodes: config.nodes,
-    searchEngine: 'spotify',
-    maxQueueSize: 1000,
-    maxPlaylistSize: 1000,
+    searchEngine: 'youtube',
+    maxQueueSize: 250,
+    maxPlaylistSize: 250,
     debug: config.debug,
     voiceConnectionTimeout: 60,
     reconnectInterval: 20,
@@ -41,6 +41,7 @@ new Manager(client, {
 
 client.shard = new ClusterClient(client);
 
+const plugins = new Plugins({ client: client });
 const canvas = new AoiCanvas(client);
 const handler = new Handler(
     {
@@ -52,11 +53,9 @@ const handler = new Handler(
 );
 
 require("./handler/ready.js")(client);
-
-handler.loadFunctions('./handler/functions');
-handler.loadStatuses('./handler/statuses.js');
+require("./handler/statuses.js")(client);
+handler.loadFunctions('./handler/functions/')
 client.loadCommands('./src/commands/client/', config.debug);
 client.loadVoiceEvents('./src/commands/player/', config.debug);
 
-const plugins = new Plugins({ client: client });
 plugins.loadPlugins();

@@ -5,14 +5,12 @@ module.exports = [{
         {attachment:menu.gif:./src/data/images/menu.gif}
         {actionRow:
             {selectMenu:menuID:Выберите пункт:1:1:false:
-                {stringInput:slxnqq:ownerID:Создатель сервера и разработчик этого бота.:false:$getObjectProperty[interface;aboutme]}
-                {stringInput:Оптимизация ПК:optimizationID:Видосы/статьи которые мне помогли.:false:$getObjectProperty[interface;optimization]}
-                {stringInput:Персонализация:rolesID:Цветные роли & пинги на сервере.:false:$getObjectProperty[interface;customization]}
+                {stringInput:slxnqq:ownerID:Создатель сервера и разработчик этого бота.:false:$getEmoji[interface.aboutMe]}
+                {stringInput:Оптимизация ПК:optimizationID:Видосы/статьи которые мне помогли.:false:$getEmoji[interface.optimization]}
+                {stringInput:Персонализация:rolesID:Цветные роли & пинги на сервере.:false:$getEmoji[interface.customization]}
             }
         }
     ;false]
-
-    $createObject[interface;$getMVar[interface]]
 
     $onlyIF[529790206195269632==$authorID;
         Упс... Что-то пошло не так...\n-# Вы не являетесь разработчиком бота.
@@ -46,11 +44,11 @@ module.exports = [{
     code: `
     $interactionReply[
         {newEmbed:
-            {description:\`\`\`Напомню, делаете всё на свой страх и риск, \nответственность за ваш комп я никакой \nне несу.\`\`\`\n\`\`\`Самый лучшый способ выжать максимум из\nваших комплектующих, это поставить чистую\nдесятку только с контрой и вырезать всё\nчто можно. А пользоваться полноценно\nдругой виндой.\`\`\`}
+            {description:-# ./qff/optimization.md\n\`\`\`Напомню, делаете всё на свой страх и риск, \nответственность за ваш комп я никакой \nне несу.\`\`\`\n\`\`\`Самый лучшый способ выжать максимум из\nваших комплектующих, это поставить чистую\nдесятку только с контрой и вырезать всё\nчто можно. А пользоваться полноценно\nдругой виндой.\`\`\`}
             {field:Программы:[BoosterX](https://boosterx.org/en/)\n [win10 tweaker](https://win10tweaker.ru/):true}
             {field:Видосы:[Две системы на одном ПК](https://www.youtube.com/watch?v=jb7jusFYQaY)\n[Быстрая оптимизация Windows 11 и 10!](https://www.youtube.com/watch?v=gQ8pqnySAwk):true}
             {field:Гайды в стиме:[Настройка и оптимизации Windows и CS2](https://steamcommunity.com/sharedfiles/filedetails/?id=1651078798)\n[Настройка PUBG и как выжать из PC МАКСИМУМ FPS!](https://steamcommunity.com/sharedfiles/filedetails/?l=german&id=1594401155):false}
-            {color:$getMVar[embedColor]}
+            {color:$getData[embed.color]}
         }
         ;everyone;true;false
     ]
@@ -109,8 +107,8 @@ module.exports = [{
             {description:1.5 г. пользуюсь данной мышкой, пару раз отваливалось колесо, приходилось чистить что-бы прокрутка работала, под конец января сдохла нахуй кнопка mouse3 и после месяца само по себе починилось. А так держит акум нормально, плюсом 4к донгл и нихуёвый софт. Вес как по мне тоже заебок.}
             {field:Выводы:Хуйня полная. Стоила бы дешевле, тогда похуй было бы.:true}
             {field:Покупал за:79.89€ + 14.83€:true}
-            {image:$getMVar[line]}
-            {color:$getMVar[embedColor]}
+            {image:$getImage[qff.line]}
+            {color:$getData[embed.color]}
         }
         {newEmbed:
             {author:Dark Project KD104A:https://yt3.googleusercontent.com/vMqhCQ3fWrCuk0Mbmg8EYHi2gCW_CHgof-7ud7_-hGAtPRRc0YdOIPXJa1bOUNRvhlji2xiqwg=s900-c-k-c0x00ffffff-no-rj}
@@ -118,8 +116,8 @@ module.exports = [{
             {description:Пользуюсь вроде бы около 3-4 лет. Софт полу-калище, моментами крашит хуй пойми почему, но в принципе юзабелен. С завода не работает один свитч на нумпаде. А так чё, Gateron Yellow свитчи, даблшот пбт капы. Белый цвет ввиде розового. Без хот свапа. На момент покупки для меня этот вариант был лучшим среди других.}
             {field:Выводы:На тот момент лучше не было. А так лучше взять всё кроме этой хуйни.:true}
             {field:Покупал за:~70-80€:true}
-            {image:$getMVar[line]}
-            {color:$getMVar[embedColor]}
+            {image:$getImage[qff.line]}
+            {color:$getData[embed.color]}
         }
         {newEmbed:
             {author:Fifine K669:https://pbs.twimg.com/profile_images/1334755608067600384/HsSisu-x_400x400.png}
@@ -127,8 +125,8 @@ module.exports = [{
             {description:Самая старая моя покупка, но при этом самая ахуенная. Купил его в 2018 году, активно юзать начал в 2020. Ронял, пиздил, заливал, на всё ему похуй, работает так же ахуенно как и раньше. Недавно прикупил кранштейн с пауком, теперь вообще кайф.}
             {field:Выводы:На сегоднящний день, я бы его не брал, хоть он звучит не плохо.:true}
             {field:Покупал за:25€ + 30€:true}
-            {image:$getMVar[line]}
-            {color:$getMVar[embedColor]}
+            {image:$getImage[qff.line]}
+            {color:$getData[embed.color]}
         }
         {newEmbed:
             {author:Chinami Kono - Pain:https://www.custommade.ru/images/logos/logo-cm-black-crop.png}
@@ -136,8 +134,8 @@ module.exports = [{
             {description:Ахуенный коврик, очень мне нравится своим рисунком, жаль с оффициального сайта не смог заказать, а так заказал с алика. Ни о чём не жалею.}
             {field:Выводы:Просто ахуенный коврик, под ахуенный сетапчик.:true}
             {field:Покупал за:18.34€:true}
-            {image:$getMVar[line]}
-            {color:$getMVar[embedColor]}
+            {image:$getImage[qff.line]}
+            {color:$getData[embed.color]}
         }  
         {newEmbed:
             {author:Razer Barracuda X - Mercury (2021):https://cdn.freebiesupply.com/logos/large/2x/razer-logo-png-transparent.png}
@@ -145,8 +143,8 @@ module.exports = [{
             {description:Купил ближе к началу декабря 2024, как по мне ахуенные наушники, среди аналогов за свою цену ебут всё что можно. 100 мисок риса/100. Жаль только софта на комп нету. Держут 50 часов активной борьбы, лёгкие и удобные.}
             {field:Выводы:На данный момент самая моя удачная покупка. Среди аналогов за свою цену, рвут всё что можно.:true}
             {field:Покупал за:88,90€:true}
-            {image:$getMVar[line]}
-            {color:$getMVar[embedColor]}
+            {image:$getImage[qff.line]}
+            {color:$getData[embed.color]}
         }
         {newEmbed:
             {author:Lenovo Legion R27FC-30 240Hz:https://images.seeklogo.com/logo-png/46/2/lenovo-logo-png_seeklogo-463318.png}
@@ -154,8 +152,8 @@ module.exports = [{
             {description:На момент поломки старого монитора, этот был лучшим за свою цену. Присутсвует слабо заметный гостинг, который вообще никак не мешает играть. Моник кайф.}
             {field:Выводы:Было бы больше денег, купил бы IPS и нормальный, не изогнутый. Но тоже пойдёт.:true}
             {field:Покупал за:233.44€:true}
-            {image:$getMVar[line]}
-            {color:$getMVar[embedColor]}
+            {image:$getImage[qff.line]}
+            {color:$getData[embed.color]}
         }
         {actionRow:
             {button:Вернуться:secondary:back:false:↩️}

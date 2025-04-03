@@ -18,8 +18,8 @@ module.exports = {
         title: "softBlue",
         functionName: "gray",
         type: {
-          djs: "gray",
-          aoijs: "gray"
+            djs: "gray",
+            aoijs: "gray"
         },
         file: "gray",
         directory: "gray",

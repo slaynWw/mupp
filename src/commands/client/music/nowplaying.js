@@ -10,13 +10,11 @@ module.exports = [{
             {field:Артист:$songInfo[artist]:true}
             {field:Добавил:$songInfo[requester.mention]:true}
             {thumbnail:$songInfo[thumbnail]}
-            {image:$getMVar[line]}
+            {image:$getImage[qff.line]}
             {color:$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;ed3e3e];spotify;3eed46];soundcloud;ed843e]}
         }
         ;everyone;true;false
     ]
-
-    $createObject[emojis;$getMVar[emojis]]
 
     $onlyIf[$playerStatus!=stopped&&$playerStatus!=destroyed;
         Упс... Что-то пошло не так...\n-# Музыкальная очередь пуста. Ипользуйте </play\:$getApplicationCommandID[play;global]> что-бы добавить трек.

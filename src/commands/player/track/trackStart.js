@@ -6,36 +6,47 @@ module.exports = {
     code: `
         $if[$hasPlayer==true&&$voiceId[$clientId]!=||$hasPlayer==true&&$voiceMemberCount[$voiceId[$clientId]]!=1||$hasPlayer==true&&$channelExists[$channelId]==true]
             $setNowPlaying[$get[ID]]
-            $writeFile[./src/data/message.txt;$get[ID]]
-            $let[ID;$sendMessage[{actionRow:{selectMenu:loopMode:Repeat none:1:1:false:{stringInput:off:noneMode::true:$getObjectProperty[interface;false]}{stringInput:queue:queueMode::false:🔁}{stringInput:single:songMode::false:🔂}}}{actionRow:{button::secondary:stop:false:$getObjectProperty[interface;stop]}{button::secondary:previous:false:$getObjectProperty[interface;previous]}{button::secondary:pauseresume:false:$getObjectProperty[interface;pauseresume]}{button::secondary:skip:false:$getObjectProperty[interface;skip]}{button::secondary:queueButton:false:$getObjectProperty[interface;queue]}}{attachment:player.png:./src/data/images/player.png};true]]
+            $setChannelMVar[playerID;$get[ID];$playerChannelID]
+            $let[ID;$sendMessage[{actionRow:{button::secondary:leave:false:$getEmoji[music.buttons.stop]}{button::secondary:previous:false:$getEmoji[music.buttons.previous]}{button::secondary:$playerStatus:false:$getEmoji[music.buttons.player.$playerStatus]}{button::secondary:skip:false:$getEmoji[music.buttons.skip]}{button::secondary:$loopStatus:false:$getEmoji[music.buttons.loop.$loopStatus]}}{attachment:player.png:./src/data/images/player.png};true]]
         
             $downloadCanvas[player;./src/data/images/player.png]
-                $drawImage[player;$get[platform];12;12;24;24]
-                $fillText[player;$get[title];#ffffff;25px productsansbold;12;158]
-                $fillText[player;$get[author];#b8b8b8;13px productsansregular;12;176]
-                $drawImage[player;$getObjectProperty[playerImages;blackGradient];0;-81;400;400;10]
-                $drawImage[player;$getObjectProperty[playerImages;black];0;-81;400;400;10]
+                $fillText[player;$get[platform];$lightenColor[$get[dominantColor];28];50px platforms;12;$get[ph];376]
+                $fillText[player;$get[title];$lightenColor[$get[dominantColor];28];22px productsansbold;12;158;376]
+                $fillText[player;$get[author];$get[dominantColor];13px productsansregular;12;176;376]
+                $drawImage[player;$getImage[player.blackGradient];0;-81;400;400;10]
+                $drawImage[player;$getImage[player.black];0;-81;400;400;10]
                 $filter[player;remove;blur]
 
-                $drawImage[player;$get[thumbnail];0;-81;400;400;10]
+                $drawImage[player;$get[thumbnail];0;$get[y];$get[w];$get[h];10]
                 $filter[player;set;blur;1]
             $createCanvas[player;400;188]
+
+            $let[dominantColor;$getDominantColor[$songInfo[thumbnail]]]
+
+            $let[h;$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;225];spotify;400];soundcloud;400]]
+            $let[w;$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;400];spotify;400];soundcloud;400]]
+            $let[y;$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;-20];spotify;-81];soundcloud;-81]]
 
             $let[title;$songInfo[title]]
             $let[author;$songInfo[author]]
             $let[thumbnail;$songInfo[thumbnail]]
-            $let[platform;$replaceText[$replaceText[$replaceText[$songInfo[platform];spotify;$getObjectProperty[playerImages;spotify]];soundcloud;$getObjectProperty[playerImages;soundcloud]];youtube;$getObjectProperty[playerImages;youtube]]]
-            $let[voice;$channelName[$voiceID[$authorID]]]
+            $let[ph;$replaceText[$replaceText[$replaceText[$songInfo[platform];spotify;36];soundcloud;32];youtube;34]]
+            $let[platform;$replaceText[$replaceText[$replaceText[$songInfo[platform];spotify;4];soundcloud;5];youtube;1]]
         $else
             $leaveVC
         $endif
-
-        $createObject[playerImages;$getMVar[playerImages]]
-        $createObject[interface;$getMVar[interface]]
-        $createObject[emojis;$getMVar[emojis]]
     `
 };
 
 /*
-
+$sendMessage[{actionRow:{button::secondary:leave:false:$getEmoji[music.buttons.stop]}{button::secondary:previous:false:$getEmoji[music.buttons.previous]}{button::secondary:$playerStatus:false:$getEmoji[music.buttons.player.$playerStatus]}{button::secondary:skip:false:$getEmoji[music.buttons.skip]}{button::secondary:$loopStatus:false:$getEmoji[music.buttons.loop.$loopStatus]}}{attachment:player.png:./src/data/images/player.png};true]
+$sendMessage[
+    {actionRow:
+        {button::secondary:leave:false:$getEmoji[music.buttons.stop]}
+        {button::secondary:previous:false:$getEmoji[music.buttons.previous]}
+        {button::secondary:$playerStatus:false:$getEmoji[music.buttons.player.$playerStatus]}
+        {button::secondary:skip:false:$getEmoji[music.buttons.skip]}
+        {button::secondary:$loopStatus:false:$getEmoji[music.buttons.loop.$loopStatus]}
+    }
+    {attachment:player.png:./src/data/images/player.png};true]
 */

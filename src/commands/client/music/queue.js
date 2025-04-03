@@ -1,26 +1,26 @@
-module.exports = {
+module.exports = [{
     name: "queue",
     type: "interaction",
     prototype: "slash",
     code: `
-        $interactionReply[
+        $interactionFollowUp[
             {newEmbed:
-                {author:Очередь $guildName[$guildID]}
-                {thumbnail:$guildIcon}
-                {description:Очередь из $queueLength трека/треков ($queueDuration)\n$queue[$if[$slashOption[page]==;1;$slashOption[page]];20;{position}. [{title}]({url})]}
-                {color:$getMVar[embedColor]}
+                {description:-# ./commands/music}
+                {field:/nowplaying.md:[$songInfo[title]]($songInfo[url]):false}
+                {color:$getData[embed.color]}
+                {field:/queue.md:Очередь из $queueLength трека/треков ($queueDuration)\n$queue[$get[p];10;{position}. [{title}]({url})]:false}{color:$getData[embed.color]}
             }
-            ;everyone;true;false
+            ;true;false
         ]
 
-        $onlyIf[$queueLength!=0;
-            Упс... Что-то пошло не так...\n-# Музыкальная очередь пуста! Ипользуйте </play\:$getApplicationCommandID[play;global]> что-бы добавить трек.
-            {options:
-                {interaction}   
-            }
-            {extraOptions:
-                {ephemeral}
-            }
-        ]
+        $interactionDefer[true]
+
+
+        $onlyIf[$get[mp]>=$get[p];Упс... Что-то пошло не так...\n-# Страница не найдена! Ипользуйте </play\:$getApplicationCommandID[play;global]> что-бы добавить трек.{options:{interaction}   }{extraOptions:{ephemeral}}]
+        $onlyIf[$get[p]>0;Упс... Что-то пошло не так...\n-# Страница не найдена! Ипользуйте </play\:$getApplicationCommandID[play;global]> что-бы добавить трек.{options:{interaction}   }{extraOptions:{ephemeral}}]
+        $let[p;$if[$slashOption[page]==;1;$slashOption[page]]]
+        $let[mp;$ceil[$math[$queueLength/10]]]
+        $onlyIf[$queueLength>0;Упс... Что-то пошло не так...\n-# Музыкальная очередь пуста! Ипользуйте </play\:$getApplicationCommandID[play;global]> что-бы добавить трек.{options:{interaction}   }{extraOptions:{ephemeral}}]
+        $onlyIf[$hasPlayer==true;Упс... Что-то пошло не так...\n-# Музыкальный плеер отсутсвует! Ипользуйте </play\:$getApplicationCommandID[play;global]> что-бы добавить трек.{options:{interaction}   }{extraOptions:{ephemeral}}]
     `
-}
+}]

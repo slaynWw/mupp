@@ -2,23 +2,28 @@ module.exports = [{
     name: "update",
     aliases: ["reload", "upd"],
     code: `
-    $author[Команды успешно перезагружены!]
-	$addField[MongoDB latency;\`$round[$mongoPing]ms\`;false]
-    $addField[API latency;\`$round[$guildShardPing]ms\`;true]
-    $addField[Client latency;\`$round[$messagePing]ms\`;true]
-    $footer[Total latency - $round[$sum[$sum[$messagePing;$guildShardPing];$mongoPing]]ms]
-    $color[$getMVar[embedColor]]
-    $reply[$messageID;false]
+        $let[1;$updateCommands]
+        $sendMessage[
+            {newEmbed:
+                {description:-# ./commands/dev/reload.js}
+                {field:console.exe:\`\`\`json\ncl\: $messagePingms\ndb\: $round[$mongoPing]ms\n$if[$playerPing!=-1;v\: $playerPingms\n;]api\: $round[$guildShardPing]ms\n\nall\: $get[all]ms\n\nAll commands reloaded!\`\`\`:false}
+                {image:$getImage[mupp.ping]}
+                {color:$getData[embed.color]}
+            }
+            {options:
+                {reply:$messageID}
+                {deleteIn:5s}
+                {deleteCommand}
+            }
+        ]
 
-    $let[1;$updateCommands]
+        $let[all;$round[$math[$messagePing+$mongoPing+$if[$playerPing!=-1;$playerPing;0]+$guildShardPing]]]
 
-    $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$authorID];1];$authorID]
-
-    $onlyIF[529790206195269632==$authorID;
-        Упс... Что-то пошло не так...\n-# Вы не являетесь разработчиком бота.
-        {options:
-            {reply:$messageID}
-        }
-    ]
+        $onlyIF[529790206195269632==$authorID;
+            Упс... Что-то пошло не так...\n-# Вы не являетесь разработчиком бота.
+            {options:
+                {reply:$messageID}
+            }
+        ]
     `
 }];

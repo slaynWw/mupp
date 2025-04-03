@@ -1,33 +1,35 @@
 {
-  "name": "slxxxx",
+  "name": "mupp",
   "version": "0.1",
-  "description": "Discord bot for qff. Made with lxve.",
+  "description": "Discord bot for qff",
+  "keywords": [
+    "mupp"
+  ],
+  "homepage": "https://github.com/slaynww/mupp#readme",
+  "bugs": {
+    "url": "https://github.com/slaynww/mupp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slaynww/mupp.git"
+  },
+  "license": "ISC",
+  "author": "slaynww",
+  "type": "commonjs",
   "main": "src/shard.js",
   "scripts": {
     "test": "node ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/slaynWw/slxxxx.git"
-  },
-  "keywords": [
-    "slxxxx",
-    "qff"
-  ],
-  "author": "slaynww",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/slaynWw/slxxxx/issues"
-  },
-  "homepage": "https://github.com/slaynWw/slxxxx#readme",
   "dependencies": {
     "aoi.canvas": "^3.0.10",
     "aoi.js": "^6.9.0",
     "aoi.js-handler": "^1.1.0",
-    "aoi.mongodb": "^1.2.2",
+    "aoi.mongodb": "github:NanotechPikachu/aoi.mongodb",
     "aoijs.lavalink": "^4.8.0",
-    "discord-hybrid-sharding": "^2.2.4",
+    "canvas": "^3.1.0",
+    "discord-hybrid-sharding": "^2.2.6",
     "dotenv": "^16.4.7",
-    "scootz.js": "^1.0.1"
+    "fast-average-color-node": "^3.1.0",
+    "mupp.js": "github:slaynWw/mupp.js"
   }
 }

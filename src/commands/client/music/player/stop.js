@@ -1,11 +1,13 @@
 module.exports = {
-    name: "stop",
+    name: 'leave',
     type: "interaction",
     prototype: "button",
     code: `
-        $leaveVC
-        $destroyPlayer
+        $disconnect
         $deleteNowPlaying
-        $interactionReply[⏹️;everyone;true;false]
+        $stopTrack
+        $onlyIf[$voiceID[$authorId]==$voiceID[$clientID];Упс... Что-то пошло не так...\n-# Что-бы использовать меню, подключитесь к голосовому каналу в котором находится бот.{options:{interaction}}{extraOptions:{ephemeral}}]
     `
-}
+};
+
+//$queue[1;20;{position}. [{title}]({url})]

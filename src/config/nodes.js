@@ -1,18 +1,26 @@
 module.exports = [
   {
-    name: "Amethyst",
-    host: "e1.aurorix.net",
-    port: 20172,
-    auth: "2025-01-03",
-    secure: false
+    name: "CharlesNaig",
+    host: "lava-v4.ajieblogs.eu.org",
+    port: 443,
+    auth: "https://dsc.gg/ajidevserver",
+    secure: true
   }
   /*
+{
+  "identifier": "Public Lavalink v4 NonSSL",
+  "password": "https://dsc.gg/ajidevserver",
+  "host": "lava-v4.ajieblogs.eu.org",
+  "port": 80,
+  "secure": false
+}
   {
-    name: "slxxxx",
-    host: "0.0.0.0",
-    port: 1488,
-    auth: "2025-01-03",
-    secure: false
-  }
+  "identifier": "Public Lavalink v4",
+  "password": "https://dsc.gg/ajidevserver",
+  "host": "lava-v4.ajieblogs.eu.org",
+  "port": 443,
+  "secure": true
+}
   */
+  
 ];

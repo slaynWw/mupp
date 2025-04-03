@@ -1,4 +1,28 @@
 module.exports = {
+    //user_stats
+    getTips: 0,
+    voiceTime: 0,
+    voiceJoined: 0,
+    playerTipped: 0,
+    messageCount: 0,
+    commandsUsed: 0,
+    sendedMessageCount: 0,
+    receivedMessageCount: 0,
+
+    //user_profile
+    fieldColor: "b9bec9",
+    fieldTitle: "Нажмите ⚙️",
+    fieldDescription: "Что-бы настроить текст бокс",
+
+    //music
+    playerID: "",
+    maxPage: 0,
+    page: 0,
+}
+
+
+/* 
+module.exports = {
     ownerID: "529790206195269632",
 
     //client
@@ -69,30 +93,23 @@ module.exports = {
             "aboutme": "<:aboutme:1350308915660718152>",
             "customization": "<:customization:1350311152835493888>",
             "error": "<:error:1350311161631084617>",
-            "previous": "<:previous:1350326766673203200>",
-            "skip": "<:skip:1350326778169659432>",
+            "previous": "<:backward:1352958078202548224>",
+            "skip": "<:forward:1352958085387391027>",
             "pauseresume": "<:pauseresume:1350326791168069654>",
-            "stop": "<:stop:1350326807395827712>",
-            "queue": "<:queue:1350327151773225032>"
+            "stop": "<:stop:1352958099845152790>",
+            "queue": "<:queue:1350327151773225032>",
+            "player": {
+                "paused": "<:play:1350620536153047092>",
+                "playing": "<:pause:1352957243204567052>"
+            },
+            "loop": {
+                "off": "<:repeatoff:1352958903402500197>",
+                "queue": "<:repeat:1352958911392649289>",
+                "song": "<:repeatsingle:1352958926022381621>"
+            }
         },
 
     //user
-        //economy
-        gold: 0, //items
-        shards: 0, //tips & music & other 
-        madstone: 0, //item recipes
-        rating: 0,
-        maxRating: 0,
-        hero: "-",
-        heroTier: 1,
-        heroTierColor: "#b76014",
-        heroIcon: "https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/heroes/ogre_magi.png",
-        heroStrength: 0,
-        heroAgility: 0,
-        heroIntelligence: 0,
-        upgrades: "-",
-        items: "-",
-
         //profile
         profile: false,
         customBadges: "",
@@ -101,6 +118,8 @@ module.exports = {
     
         //stats
         getTips: 0, //получено типов
+        voiceTime: 0,
+        voiceJoined: 0,
         playerTipped: 0, //типнуто пользователей
         messageCount: 0, //отправлено сообщений
         commandsUsed: 0, //ипользовано команд
@@ -124,3 +143,4 @@ module.exports = {
         banner: "https://cdn.discordapp.com/attachments/1263969081967775764/1335237138949607556/navigation_new.png?ex=679f6ffd&is=679e1e7d&hm=a71e345daeeca4cef23e27432de84c2fffc3004d4849629c4c618aa27baa051e&",
         rolesBanner: "https://cdn.discordapp.com/attachments/1263969081967775764/1335237126463426711/roles_new.png?ex=679f6ffa&is=679e1e7a&hm=4e5fb067cf863130fb328d2ff0fb81fffaaf01960e3bcaf86202f335bd143973&"
 }
+*/
