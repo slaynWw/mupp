@@ -1,10 +1,17 @@
 module.exports = [
   {
-    name: "CharlesNaig",
+    name: "Ajieblogs",
     host: "lava-v4.ajieblogs.eu.org",
     port: 443,
     auth: "https://dsc.gg/ajidevserver",
     secure: true
+  }, 
+  {
+    name: "CharlesNaig",
+    host: "lavahatry4.techbyte.host",
+    port: 3000,
+    auth: "NAIGLAVA-dash.techbyte.host",
+    secure: false
   }
   /*
 {
@@ -20,6 +27,14 @@ module.exports = [
   "host": "lava-v4.ajieblogs.eu.org",
   "port": 443,
   "secure": true
+}
+
+{
+  "identifier": "ChalresNaig Node",
+  "password": "NAIGLAVA-dash.techbyte.host",
+  "host": "lavahatry4.techbyte.host",
+  "port": 3000,
+  "secure": false
 }
   */
   
