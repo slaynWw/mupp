@@ -23,6 +23,7 @@ module.exports = [{
         ]
 
         $writeFile[./src/data/user.txt;$get[user]]
+        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
         $let[user;$if[$slashOption[user]==;$interactionData[author.id];$slashOption[user]]]
     `
 }, {

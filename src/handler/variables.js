@@ -1,6 +1,7 @@
 module.exports = {
     //user_stats
     getTips: 0,
+    voiceID: "",
     voiceTime: 0,
     voiceJoined: 0,
     playerTipped: 0,

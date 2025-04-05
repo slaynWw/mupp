@@ -7,6 +7,7 @@ module.exports = {
         $if[$hasPlayer==true&&$voiceId[$clientId]!=||$hasPlayer==true&&$voiceMemberCount[$voiceId[$clientId]]!=1||$hasPlayer==true&&$channelExists[$channelId]==true]
             $setNowPlaying[$get[ID]]
 			$setChannelMVar[playerID;$get[ID];$playerChannelID]
+            $setVoiceStatus[$voiceID;mupp - $nonEscape[$songInfo[title]]]
             $let[ID;$sendMessage[{actionRow:{button::secondary:leave:false:$getEmoji[music.buttons.stop]}{button::secondary:previous:false:$getEmoji[music.buttons.previous]}{button::secondary:$playerStatus:false:$getEmoji[music.buttons.player.$playerStatus]}{button::secondary:skip:false:$getEmoji[music.buttons.skip]}{button::secondary:$loopStatus:false:$getEmoji[music.buttons.loop.$loopStatus]}}{attachment:player.png:./src/data/images/player.png};true]]
             
             $downloadCanvas[player;./src/data/images/player.png]

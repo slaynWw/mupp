@@ -17,6 +17,7 @@ module.exports = [{
             }
         ]
 
+        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
         $let[all;$round[$math[$messagePing+$mongoPing+$if[$playerPing!=-1;$playerPing;0]+$guildShardPing]]]
 
         $onlyIF[529790206195269632==$authorID;

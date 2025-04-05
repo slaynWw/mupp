@@ -16,6 +16,8 @@ module.exports = [{
         ;everyone;true;false
     ]
 
+    $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
+
     $onlyIf[$playerStatus!=stopped&&$playerStatus!=destroyed;
         Упс... Что-то пошло не так...\n-# Музыкальная очередь пуста. Ипользуйте </play\:$getApplicationCommandID[play;global]> что-бы добавить трек.
         {options:

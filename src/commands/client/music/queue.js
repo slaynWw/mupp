@@ -15,6 +15,7 @@ module.exports = [{
 
         $interactionDefer[true]
 
+        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
 
         $onlyIf[$get[mp]>=$get[p];Упс... Что-то пошло не так...\n-# Страница не найдена! Ипользуйте </play\:$getApplicationCommandID[play;global]> что-бы добавить трек.{options:{interaction}   }{extraOptions:{ephemeral}}]
         $onlyIf[$get[p]>0;Упс... Что-то пошло не так...\n-# Страница не найдена! Ипользуйте </play\:$getApplicationCommandID[play;global]> что-бы добавить трек.{options:{interaction}   }{extraOptions:{ephemeral}}]

@@ -31,6 +31,8 @@ module.exports = [{
             $let[QUEUE;$textTrim[$replaceText[$replaceText[$checkCondition[$isCurrentExists==false];false;$queueLength];true;-1]]]
         $endIF
 
+        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
+
         $interactionDefer[true]
         $onlyIf[$checkContains[$trackLoadType[$slashOption[song]];track;search;playlist]==true;Упс... Что-то пошло не так...\n-# Результатов не найдено!{options:{interaction}}{extraOptions:{ephemeral}}]
         
