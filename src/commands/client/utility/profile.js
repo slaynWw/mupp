@@ -3,26 +3,9 @@ module.exports = [{
     type: "interaction",
     prototype: "slash",
     code: `
-        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
-
-        $interactionReply[
-            {newEmbed:
-                {description:-# ./commands/utilities/profile.js}
-                {field:В числе участников с\::$getEmoji[discord] <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:R> — $getEmoji[qff] <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID;ms];1000]]:R>:false}
-                {field:$getUserMVar[fieldTitle;$get[user]]:$getUserMVar[fieldDescription;$get[user]]:false}
-                {thumbnail:$userAvatar[$get[user]]}
-                {image:$if[$userBanner[$get[user]]==null;$getImage[mupp.botinfo];$userBanner[$get[user];256;true]]}
-                {color:$getDominantColor[$userAvatar[$get[user]]]}
-            }
-            {actionRow:
-                {button::secondary:userStats:false:📊}
-                {button:Профиль $username[$get[user]]:secondary:profileName:true}
-                {button::secondary:userSettings:false:⚙️}
-            }
-            ;everyone;false;true
-        ]
-
-        $writeFile[./src/data/user.txt;$get[user]]
+        $setMessageMVar[profileUserID;$get[user];$get[msgID]]
+        $setChannelMVar[profileMessageID;$get[msgID];$channelID]
+        $let[msgID;$interactionReply[{newEmbed:{description:-# ./commands/utilities/profile.js}{field:В числе участников с\::$getEmoji[discord] <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:R> — $getEmoji[qff] <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID;ms];1000]]:R>:false}{field:$getUserMVar[fieldTitle;$get[user]]:$getUserMVar[fieldDescription;$get[user]]:false}{thumbnail:$userAvatar[$get[user]]}{image:$if[$userBanner[$get[user]]==null;$getImage[mupp.botinfo];$userBanner[$get[user];256;true]]}{color:$getDominantColor[$userAvatar[$get[user]]]}}{actionRow:{button::secondary:userStats:false:📊}{button:Профиль $username[$get[user]]:secondary:profileName:true}{button::secondary:userSettings:false:⚙️}};everyone;false;true]]
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
         $let[user;$if[$slashOption[user]==;$interactionData[author.id];$slashOption[user]]]
     `
@@ -31,24 +14,9 @@ module.exports = [{
     type: "interaction",
     prototype: "button",
     code: `
-        $interactionUpdate[
-            {newEmbed:
-                {description:-# ./commands/utilities/profile.js}
-                {field:В числе участников с\::$getEmoji[discord] <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:R> — $getEmoji[qff] <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID;ms];1000]]:R>:false}
-                {field:$getUserMVar[fieldTitle;$get[user]]:$getUserMVar[fieldDescription;$get[user]]:false}
-                {thumbnail:$userAvatar[$get[user]]}
-                {image:$if[$userBanner[$get[user]]==null;$getImage[mupp.botinfo];$userBanner[$get[user];256;true]]}
-                {color:$getDominantColor[$userAvatar[$get[user]]]}
-            }
-            {actionRow:
-                {button::secondary:userStats:false:📊}
-                {button:Профиль $username[$get[user]]:secondary:profileName:true}
-                {button::secondary:userSettings:false:⚙️}
-            }
-            ;false;false
-        ]
+        $interactionUpdate[{newEmbed:{description:-# ./commands/utilities/profile.js}{field:В числе участников с\::$getEmoji[discord] <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:R> — $getEmoji[qff] <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID;ms];1000]]:R>:false}{field:$getUserMVar[fieldTitle;$get[user]]:$getUserMVar[fieldDescription;$get[user]]:false}{thumbnail:$userAvatar[$get[user]]}{image:$if[$userBanner[$get[user]]==null;$getImage[mupp.botinfo];$userBanner[$get[user];256;true]]}{color:$getDominantColor[$userAvatar[$get[user]]]}}{actionRow:{button::secondary:userStats:false:📊}{button:Профиль $username[$get[user]]:secondary:profileName:true}{button::secondary:userSettings:false:⚙️}}]
 
-        $let[user;$readFile[./src/data/user.txt]]
+        $let[user;$getMessageMVar[profileUserID;$getChannelMVar[profileMessageID;$channelId]]]
     `
 }, {
     name: "userStats",
@@ -74,7 +42,7 @@ module.exports = [{
         ]
 
         $let[h;$roundTenth[$math[$getUserMVar[voiceTime;$get[user]]/(1000*60*60)];2]]
-        $let[user;$readFile[./src/data/user.txt]]
+        $let[user;$getMessageMVar[profileUserID;$getChannelMVar[profileMessageID;$channelId]]]
     `
 }, {
     name: "userSettings",
@@ -86,14 +54,11 @@ module.exports = [{
                 {textInput:Заголовок текст бокса:1:fieldTitle:true:Пример - Обо мне:1:100}
             }
             {actionRow:
-                {textInput:Цвет эмбеда:1:fieldColor:true:Пример - #ffffff:1:7}
-            }
-            {actionRow:
                 {textInput:Описание текст бокса:2:fieldDescription:true:Можно вставлять ссылки, арты, хуярты, пасты и т.п.:1:500}
             }
         ]
 
-        $let[user;$readFile[./src/data/user.txt]]
+        $let[user;$getMessageMVar[profileUserID;$getChannelMVar[profileMessageID;$channelId]]]
     `
 }, {
     name: "profileSettingsModal",
@@ -118,7 +83,6 @@ module.exports = [{
         ]
 
         $setUserMVar[fieldTitle;$textInputValue[fieldTitle];$interactionData[author.id]]
-        $setUserMVar[fieldColor;$textInputValue[fieldColor];$interactionData[author.id]]
         $setUserMVar[fieldDescription;$textInputValue[fieldDescription];$interactionData[author.id]]
         $let[user;$interactionData[author.id]]
     `

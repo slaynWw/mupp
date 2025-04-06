@@ -9,7 +9,7 @@ module.exports = [{
             }
         ]
 
-        $writeFile[./src/data/recipient.txt;$slashOption[user]]
+        $setChannelMVar[AMrecipient;$slashOption[user];$channelID]
 
         $onlyIf[$isUserDmEnabled[$slashOption[user]]==true;
             Упс... Что-то пошло не так...\n-# Пользователь отключил личные сообщение с пользовательских серверов.
@@ -47,6 +47,6 @@ module.exports = [{
 
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
 
-        $let[user;$readFile[./src/data/recipient.txt]]
+        $let[user;$getChannelMVar[AMrecipient;$channelID]]
     `
 }]

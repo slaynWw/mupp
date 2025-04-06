@@ -11,14 +11,16 @@ module.exports = {
     receivedMessageCount: 0,
 
     //user_profile
-    fieldColor: "b9bec9",
+    profileMessageID: "",
+    profileUserID: "",
     fieldTitle: "Нажмите ⚙️",
     fieldDescription: "Что-бы настроить текст бокс",
 
+    //anonymousMessages
+    AMrecipient: "",
+
     //music
-    playerID: "",
-    maxPage: 0,
-    page: 0,
+    playerID: ""
 }
 
 

@@ -15,7 +15,6 @@ module.exports = [{
                     $playTrack[$nonEscape[$slashOption[song]];ytsearch]
                 $endIf
 
-            $writeFile[./src/data/channel.txt;$channelID]
             $setDeafen[true]
             $connect
         $else

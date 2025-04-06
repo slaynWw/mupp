@@ -8,8 +8,6 @@ module.exports = {
         $disconnect
         $deleteNowPlaying
 
-        $let[msgID;$readFile[./src/data/message.txt]]
-
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
 
         $checkVoice

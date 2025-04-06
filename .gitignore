@@ -1,8 +1,4 @@
 node_modules
 package-lock.json
 .env
-database
-src.zip
-src.tar
-.vscode
-variables.js
+README.md
