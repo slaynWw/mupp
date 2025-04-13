@@ -1,5 +1,4 @@
 module.exports = {
-    name: 'trackStart',
     channel: '$channelId',
     type: 'trackStart',
     $if: 'old',

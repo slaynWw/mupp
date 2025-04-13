@@ -10,7 +10,6 @@ module.exports = [{
             {field:Артист:$songInfo[artist]:true}
             {field:Добавил:$songInfo[requester.mention]:true}
             {thumbnail:$songInfo[thumbnail]}
-            {image:$getImage[qff.line]}
             {color:$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;ed3e3e];spotify;3eed46];soundcloud;ed843e]}
         }
         ;everyone;true;false

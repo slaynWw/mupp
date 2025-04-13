@@ -3,6 +3,11 @@ module.exports = {
     leave: "",
     lyrics: "<title>",
     nowplaying: "",
+    pause: "",
     play: "<song>",
-    queue: "<page>"
+    previous: "",
+    queue: "<page>",
+    resume: "",
+    skip: "",
+    stop: ""
 }

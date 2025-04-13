@@ -7,6 +7,7 @@ module.exports = {
     mongoDB: process.env.MONGODB,
     mySQL: process.env.MYSQL,
     securityKey: process.env.SECURITYKEY,
+    opcApi: process.env.OPCAPI,
     debug: process.env.DEBUG === 'true' ? true : false,
     data: require('./data.js'),
     nodes: require('./nodes.js'),
