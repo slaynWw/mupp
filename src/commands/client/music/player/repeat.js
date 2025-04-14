@@ -9,7 +9,7 @@ module.exports = [{
 
         $loopMode[song]
 
-        $let[msgID;$getChannelMVar[playerID;$playerChannelID]]
+        $let[msgID;$getChannelMVar[playerID;$channelID]]
         $onlyIf[$voiceID[$authorId]==$voiceID[$clientID];Упс... Что-то пошло не так...\n-# Что-бы использовать меню, подключитесь к голосовому каналу в котором находится бот.{options:{interaction}}{extraOptions:{ephemeral}}]
     `
 },{
@@ -23,7 +23,7 @@ module.exports = [{
 
         $loopMode[queue]
 
-        $let[msgID;$getChannelMVar[playerID;$playerChannelID]]
+        $let[msgID;$getChannelMVar[playerID;$channelID]]
         $onlyIf[$voiceID[$authorId]==$voiceID[$clientID];Упс... Что-то пошло не так...\n-# Что-бы использовать меню, подключитесь к голосовому каналу в котором находится бот.{options:{interaction}}{extraOptions:{ephemeral}}]
     `
 },{
@@ -37,7 +37,7 @@ module.exports = [{
 
         $loopMode[off]
 
-        $let[msgID;$getChannelMVar[playerID;$playerChannelID]]
+        $let[msgID;$getChannelMVar[playerID;$channelID]]
         $onlyIf[$voiceID[$authorId]==$voiceID[$clientID];Упс... Что-то пошло не так...\n-# Что-бы использовать меню, подключитесь к голосовому каналу в котором находится бот.{options:{interaction}}{extraOptions:{ephemeral}}]
     `
 }]
