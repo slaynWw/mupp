@@ -4,7 +4,6 @@ module.exports = {
     channel: '$channelId',
     $if: 'old',
     code: `
-        $deleteFile[./src/data/player.jpg]
         $deleteChannelVar[playerID;$playerChannelID]
         $setVoiceStatus[$voiceID;]
     `   
