@@ -6,7 +6,8 @@ module.exports = {
         $interactionReply[$getEmoji[music.leave] <@$clientID> покинул <#$voiceID>;everyone;true;false]
 
         $disconnect
-        $deleteNowPlaying
+        $deleteChannelVar[playerID;$channelID]
+        $deleteMessage[$getChannelMVar[playerID;$channelId];$channelID]
 
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
 
