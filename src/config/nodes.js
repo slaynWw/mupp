@@ -1,9 +1,9 @@
 module.exports = [
   {
     name: "Catfein",
-    host: "lava-sg.catfein.co.id",
-    port: 5000,
-    auth: "catfein",
+    host: "0.0.0.0",
+    port: 443,
+    auth: "2025-01-03",
     secure: false
   }
 ];

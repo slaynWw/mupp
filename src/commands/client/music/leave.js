@@ -7,8 +7,6 @@ module.exports = {
 
         $disconnect
         $setVoiceStatus[$voiceID;]
-        $deleteChannelVar[playerID;$channelID]
-        $deleteMessage[$getChannelMVar[playerID;$channelId];$channelID]
 
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
 
