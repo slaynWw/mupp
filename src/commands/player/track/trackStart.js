@@ -6,15 +6,15 @@ module.exports = [{
     code: `
         $if[$hasPlayer==true&&$voiceId[$clientId]!=||$hasPlayer==true&&$channelExists[$channelId]==true]
             $log[ ]
+            $log[$songInfo[author] - $songInfo[title]]
             $log[Message ID - $get[msgID]]
             $log[Channel ID - $channelName[$channelID]]
             $log[Voice ID - $channelName[$voiceID]]
             $log[ ]
 
             $setNowPlaying[$get[msgID]]
-            $setChannelMVar[playerID;$get[msgID];$playerChannelID]
+            $setChannelMVar[playerID;$get[msgID];$channelID]
             $let[msgID;$sendMessage[{actionRow:{button::secondary:leave:false:$getEmoji[music.buttons.stop]}{button::secondary:previous:false:$getEmoji[music.buttons.previous]}{button::secondary:$playerStatus:false:$getEmoji[music.buttons.player.$playerStatus]}{button::secondary:skip:false:$getEmoji[music.buttons.skip]}{button::secondary:$loopStatus:false:$getEmoji[music.buttons.loop.$loopStatus]}}{attachment:player.jpg:./src/data/player.jpg};true]]
-            $wait[1s]
             $setVoiceStatus[$voiceID;$nonEscape[$songInfo[author]] - $nonEscape[$songInfo[title]]]
             $downloadCanvas[player;./src/data/player.jpg]
                 $fillText[player;$get[platform];$lightenColor[$getDominantColor[$songInfo[thumbnail]];28];50px platforms;12;$replaceText[$replaceText[$replaceText[$songInfo[platform];spotify;36];soundcloud;32];youtube;34];376]
@@ -33,8 +33,6 @@ module.exports = [{
         $else
             $destroyPlayer
         $endif 
-
-        $deleteFile[./src/data/player.jpg]
     `
 }];
 
