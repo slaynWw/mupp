@@ -1,6 +1,7 @@
 module.exports = {
     join: "",
     leave: "",
+    loop: "none/song/queue",
     lyrics: "<title>",
     nowplaying: "",
     pause: "",

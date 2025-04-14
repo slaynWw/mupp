@@ -12,12 +12,7 @@ module.exports = {
         status: "https://i.imgur.com/JTuj8qi.png"
     },
     player: {
-        voiceBackground: "https://i.imgur.com/iMt73MN.png",
-        blackGradient: "https://i.imgur.com/9SOPb1b.png",
-        black: "https://i.imgur.com/9LkGIdH.png",
-        spotify: "https://i.imgur.com/NTzhQVc.png",
-        soundcloud: "https://i.imgur.com/o4qexDv.png",
-        youtube: "https://i.imgur.com/rEfFvRl.png"
+        background: "https://i.imgur.com/8rvaa4z.png"
     },
     tippedImage: "https://i.imgur.com/KyeedWg.png"
 }
