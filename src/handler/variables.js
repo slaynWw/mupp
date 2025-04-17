@@ -20,7 +20,8 @@ module.exports = {
     AMrecipient: "",
 
     //music
-    playerID: ""
+    playerID: "",
+    loop: false,
 }
 
 

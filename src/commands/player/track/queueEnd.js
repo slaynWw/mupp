@@ -5,6 +5,7 @@ module.exports = {
     $if: 'old',
     code: `
         $deleteChannelVar[playerID;$playerChannelID]
+        $deleteChannelVar[loop;$playerChannelID]
         $setVoiceStatus[$voiceID;]
     `   
 };

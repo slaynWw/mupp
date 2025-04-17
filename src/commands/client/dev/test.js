@@ -3,6 +3,21 @@ module.exports = {
     aliases: ["t"],
     $if: "old",
     code: `
+        $message[1] $if[$message[1]==1]=$else!=$endIf 1
+        
+        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
+
+        $onlyIF[529790206195269632==$authorID;
+            Упс... Что-то пошло не так...\n-# Вы не являетесь разработчиком бота.
+            {options:
+                {reply:$messageID}
+            }
+        ]
+    `
+}
+
+/*
+    //weather
         $getObjectProperty[weather;[52].time] $getObjectProperty[weather;[52].data.instant.details.air_temperature]
         $getObjectProperty[weather;[33].time] $getObjectProperty[weather;[33].data.instant.details.air_temperature]
         $getObjectProperty[weather;[9].time] $getObjectProperty[weather;[9].data.instant.details.air_temperature]
@@ -16,14 +31,4 @@ module.exports = {
         $onlyIf[$jsonRequest[$get[coordinates];results]!=\[\];Упс... Что-то пошло не так...\n-# Вы неправильно ввели название города или такого города не существует..]
 
         $let[coordinates;https://api.opencagedata.com/geocode/v1/json?q=$message[1]&key=656ff89ee8a14293913ceb7f8b9ee56a]
-
-        $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
-
-        $onlyIF[529790206195269632==$authorID;
-            Упс... Что-то пошло не так...\n-# Вы не являетесь разработчиком бота.
-            {options:
-                {reply:$messageID}
-            }
-        ]
-    `
-}
+*/
