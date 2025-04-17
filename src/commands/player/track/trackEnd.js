@@ -6,7 +6,7 @@ module.exports = {
     code: `
         $if[$hasPlayer==true&&$voiceId[$clientId]!=||$hasPlayer==true&&$channelExists[$channelId]==true]
             $deleteChannelVar[playerID;$channelID]
-            $deleteMessage[$getChannelMVar[playerID;$channelId];$playerChannelID]
+            $deleteMessage[$getChannelMVar[playerID;$channelId];$channelID]
         $else
             $leaveVC
         $endif

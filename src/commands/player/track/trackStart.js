@@ -8,12 +8,12 @@ module.exports = [{
             $log[ ]
             $log[$songInfo[author] - $songInfo[title]]
             $log[Message ID - $get[msgID]]
-            $log[Channel ID - $channelName[$playerChannelID]]
+            $log[Channel ID - $channelName[$channelID]]
             $log[Voice ID - $channelName[$voiceID]]
             $log[ ]
 
-            $setChannelMVar[playerID;$get[msgID];$playerChannelID]
-            $if[$getChannelMVar[loop;$playerChannelId]==true]
+            $setChannelMVar[playerID;$get[msgID];$channelID]
+            $if[$getChannelMVar[loop;$channelID]==true]
                 $let[msgID;$sendMessage[{actionRow:{button::secondary:leave:false:$getEmoji[music.buttons.stop]}{button::secondary:previous:true:$getEmoji[music.buttons.previous]}{button::secondary:$playerStatus:false:$getEmoji[music.buttons.player.$playerStatus]}{button::secondary:skip:false:$getEmoji[music.buttons.skip]}{button::secondary:$loopStatus:false:$getEmoji[music.buttons.loop.$loopStatus]}}{attachment:player.jpg:./src/data/player.jpg};true]]
             $else
                 $let[msgID;$sendMessage[{actionRow:{button::secondary:leave:false:$getEmoji[music.buttons.stop]}{button::secondary:previous:false:$getEmoji[music.buttons.previous]}{button::secondary:$playerStatus:false:$getEmoji[music.buttons.player.$playerStatus]}{button::secondary:skip:false:$getEmoji[music.buttons.skip]}{button::secondary:$loopStatus:false:$getEmoji[music.buttons.loop.$loopStatus]}}{attachment:player.jpg:./src/data/player.jpg};true]]
