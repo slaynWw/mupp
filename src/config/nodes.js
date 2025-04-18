@@ -1,21 +1,21 @@
 module.exports = [
   {
+    name: "ajieblogs",
+    host: "lava-v4.ajieblogs.eu.org",
+    port: 443,
+    auth: "https://dsc.gg/ajidevserver",
+    secure: true
+  }
+];
+
+/*
+  {
     name: "jmlite",
     host: "46.202.82.164",
     port: 1027,
     auth: "jmlitelavalink",
     secure: false
   }
-];
-
-/*
-{
-  "identifier": "JM Lite LAVALINK",
-  "password": "jmlitelavalink",
-  "host": "46.202.82.164",
-  "port": 1027,
-  "secure": false
-}
   {
     name: "Catfein",
     host: "0.0.0.0",
@@ -45,10 +45,9 @@ module.exports = [
   "secure": false
 }
 {
-  "identifier": "Public Lavalink v4",
-  "password": "https://dsc.gg/ajidevserver",
-  "host": "lava-v4.ajieblogs.eu.org",
-  "port": 443,
-  "secure": true
+    "host": "lava-v4.ajieblogs.eu.org",
+    "port": 80,
+    "password": "https://dsc.gg/ajidevserver",
+    "secure": false
 }
 */

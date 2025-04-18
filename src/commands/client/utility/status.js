@@ -11,12 +11,15 @@ module.exports = {
                 {image:$getImage[mupp.status]}
                 {color:$getData[embed.color]}
             }
+            {actionRow:
+                {button:./uptime:5:https\://free.lavalink.rf.gd/uptime:false}
+            }
             ;false;false
         ]
 
         $interactionDefer[false]
 
-        $let[node;jmlite]
+        $let[node;ajieblogs]
             
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
     `
