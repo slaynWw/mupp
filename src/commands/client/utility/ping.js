@@ -6,17 +6,19 @@ module.exports = [{
         $interactionReply[
             {newEmbed:
                 {description:-# ./commands/utilities/ping.js}
-                {field:console.exe:\`\`\`json\ndatabase ping\: $round[$mongoPing]ms\n$if[$playerPing!=-1;voice ping\: $playerPingms\n;]api ping\: $round[$guildShardPing]ms\n\nall ping\: $get[all]ms - Shard $guildShardID\`\`\`:false}
+                {field:console.log:\`\`\`json\nDiscord API\: $get[api]ms\nDatabase\: $get[db]ms $if[$voiceID[$clientID]!=;\nVoice\: $round[$playerPing]ms;]\n\nAll - $get[all]ms\`\`\`:false}
                 {image:$getImage[mupp.ping]}
                 {color:$getData[embed.color]}
             }
             ;everyone;false;false
         ]
 
-        $let[all;$round[$math[$mongoPing+$if[$playerPing!=-1;$playerPing;0];$guildShardPing]]]
+        $let[all;$math[$get[api]+$get[db]]]
+
+        $let[api;$round[$guildShardPing]]
+        $let[db;$round[$mongoPing]]
+        $let[vc;$round[$playerPing]]
 
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
     `
 }]
-
-//Bot latency\: \`$interactionPingms\`\nDatabase latency\: \`$round[$mongoPing]ms\`\nDiscord API latency\: \`$round[$guildShardPing]ms\` (Shard \`$guildShardID\`)

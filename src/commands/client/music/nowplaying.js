@@ -5,12 +5,16 @@ module.exports = [{
     code: `
     $interactionReply[
         {newEmbed:
-            {description:### Сейчас играет [$songInfo[title]]($songInfo[url])}
+            {description:-# ./commands/music/nowplaying.md\n### $getEmoji[music.platforms.$songInfo[platform]] $songInfo[author] - $songInfo[title]}
             {field:Длительность:$currentTrackDuration[true]/$songInfo[duration]:true}
             {field:Артист:$songInfo[artist]:true}
             {field:Добавил:$songInfo[requester.mention]:true}
             {thumbnail:$songInfo[thumbnail]}
-            {color:$replaceText[$replaceText[$replaceText[$songInfo[platform];youtube;ed3e3e];spotify;3eed46];soundcloud;ed843e]}
+            {color:$getDominantColor[$songInfo[thumbnail]]}
+        }
+        {actionRow:
+            {button:./track:5:$nonEscape[$songInfo[url]]:false}
+            {button:./album:5:$if[$songInfo[albumUrl]!=;$nonEscape[$songInfo[albumUrl]];https\://google.com]:$if[$songInfo[albumUrl]!=;false;true]}
         }
         ;everyone;true;false
     ]

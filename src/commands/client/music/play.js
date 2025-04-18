@@ -9,11 +9,11 @@ module.exports = [{
             $interactionFollowUp[$get[track] добавлен в очередь!;true;false]
             $let[track;[$songInfo[title]]($songInfo[url])]
 
-                $if[$isValidLink[$slashOption[song]]==true]
-                    $playTrack[$slashOption[song]]
-                $else
-                    $playTrack[$nonEscape[$slashOption[song]];ytsearch]
-                $endIf
+            $if[$isValidLink[$slashOption[song]]==true]
+                $playTrack[$slashOption[song]]
+            $else
+                $playTrack[$nonEscape[$slashOption[song]];ytsearch]
+            $endIf
 
             $setDeafen[true]
             $connect
@@ -34,7 +34,21 @@ module.exports = [{
 
         $interactionDefer[true]
         $onlyIf[$checkContains[$trackLoadType[$slashOption[song]];track;search;playlist]==true;Упс... Что-то пошло не так...\n-# Результатов не найдено!{options:{interaction}}{extraOptions:{ephemeral}}]
-        
+
         $checkVoice
     `
 }];
+
+/*
+
+
+
+            $interactionFollowUp[$get[track] добавлен в очередь!;true;false]
+            $let[track;[$songInfo[title]]($songInfo[url])]
+
+                $if[$isValidLink[$slashOption[song]]==true]
+                    $playTrack[$slashOption[song]]
+                $else
+                    $playTrack[$nonEscape[$slashOption[song]];ytsearch]
+                $endIf
+*/

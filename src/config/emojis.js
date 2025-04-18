@@ -5,7 +5,9 @@ module.exports = {
     interface: {
         aboutMe: "<:aboutme:1350308915660718152>",
         customization: "<:customization:1350311152835493888>",
-        optimization: "<:optimization:1350311195474661399>"
+        optimization: "<:optimization:1350311195474661399>",
+        stats: "<:stats:1362738712731189499>",
+        profilesettings: "<:profilesettings:1362738687112249518>"
     },
 
     music: {
