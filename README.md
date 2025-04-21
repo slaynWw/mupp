@@ -15,6 +15,6 @@
 * [Aoi.canvas](https://github.com/aoijs/aoi.canvas) - картинки.
 * [Aoijs.lavalink](https://github.com/tyowk/aoijs.lavalink) - музыка.
 
-### Большое спасибо боту [NouRax](https://github.com/tyowk/NouRax) и его автору [tyowk](https://github.com/tyowk)!
+## Большое спасибо боту [NouRax](https://github.com/tyowk/NouRax) и его автору [tyowk](https://github.com/tyowk)!
 
 При написании кода я очень часто опирался на уже написанный код бота NouRax и частично его даже использовал в своём проекте.
