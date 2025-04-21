@@ -6,7 +6,7 @@ module.exports = [{
         $interactionReply[
             {newEmbed:
                 {description:-# ./commands/utilities/ping.js}
-                {field:console.log:\`\`\`json\nDiscord API\: $get[api]ms\nDatabase\: $get[db]ms $if[$voiceID[$clientID]!=;\nVoice\: $round[$playerPing]ms;]\n\nAll - $get[all]ms\`\`\`:false}
+                {field:console.log:\`\`\`json\nDiscord API\: $get[api]ms\nDatabase\: $get[db]ms $if[$voiceID[$clientID]!=;\nVoice\: $round[$playerPing]ms;]\n\nMessage response - $get[all]ms\`\`\`:false}
                 {image:$getImage[mupp.ping]}
                 {color:$getData[embed.color]}
             }

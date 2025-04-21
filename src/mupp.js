@@ -28,12 +28,12 @@ aoimongo.setup({
 new Manager(client, {
     nodes: config.nodes,
     searchEngine: 'youtube',
-    maxQueueSize: 250,
-    maxPlaylistSize: 250,
+    maxQueueSize: 300,
+    maxPlaylistSize: 300,
     debug: config.debug,
     voiceConnectionTimeout: 60,
-    reconnectInterval: 20,
-    reconnectTries: 10,
+    reconnectInterval: 10,
+    reconnectTries: 20,
     userAgent: 'mupp',
     moveOnDisconnect: true,
     noLimitVolume: false

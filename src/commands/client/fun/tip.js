@@ -6,7 +6,7 @@ module.exports = [{
         $deleteFile[./src/data/images/tipped.png]
         $deleteMessage[$get[msg];$channelID]
 
-        $wait[5s]
+        $wait[8s]
 
         $let[msg;$interactionFollowUp[{attachment:tip.png:./src/data/images/tipped.png};false;true]]
         $interactionDefer[false]
