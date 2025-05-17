@@ -23,5 +23,15 @@ module.exports = [{
         $let[mp;$ceil[$math[$queueLength/10]]]
         $onlyIf[$queueLength>0;Упс... Что-то пошло не так...\n-# Музыкальная очередь пуста! Ипользуйте </play\:$getApplicationCommandID[play;global]> что-бы добавить трек.{options:{interaction}   }{extraOptions:{ephemeral}}]
         $onlyIf[$hasPlayer==true;Упс... Что-то пошло не так...\n-# Музыкальный плеер отсутсвует! Ипользуйте </play\:$getApplicationCommandID[play;global]> что-бы добавить трек.{options:{interaction}   }{extraOptions:{ephemeral}}]
+    
+        $onlyIf[$getMVar[categoryMusic]==false;
+            Упс... Что-то пошло не так...\n-# Данная команда выключена.
+            {options:
+                {interaction}   
+            }
+            {extraOptions:
+                {ephemeral}
+            }
+        ]
     `
 }]

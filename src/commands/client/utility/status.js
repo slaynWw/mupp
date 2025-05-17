@@ -16,8 +16,18 @@ module.exports = {
 
         $interactionDefer[false]
 
-        $let[node;inzeworld]
+        $let[node;RY4N]
             
         $setUserMVar[commandsUsed;$sum[$getUserMVar[commandsUsed;$interactionData[author.id]];1];$interactionData[author.id]]
+
+        $onlyIf[$getMVar[categoryMusic]==false;
+            Упс... Что-то пошло не так...\n-# Данная команда выключена.
+            {options:
+                {interaction}   
+            }
+            {extraOptions:
+                {ephemeral}
+            }
+        ]
     `
 };

@@ -39,5 +39,15 @@ module.exports = [{
             {ephemeral}
         }
     ]
+
+        $onlyIf[$getMVar[categoryMusic]==false;
+            Упс... Что-то пошло не так...\n-# Данная команда выключена.
+            {options:
+                {interaction}   
+            }
+            {extraOptions:
+                {ephemeral}
+            }
+        ]
     `
 }]

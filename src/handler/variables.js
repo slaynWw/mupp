@@ -22,6 +22,11 @@ module.exports = {
     //music
     playerID: "",
     loop: false,
+
+    //commands
+    categoryFun: false,
+    categoryMusic: false,
+    categoryUtility: false
 }
 
 

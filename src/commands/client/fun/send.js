@@ -30,6 +30,16 @@ module.exports = [{
                 {ephemeral}
             }
         ]
+
+        $onlyIf[$getMVar[categoryFun]==false;
+            Упс... Что-то пошло не так...\n-# Данная команда выключена.
+            {options:
+                {interaction}   
+            }
+            {extraOptions:
+                {ephemeral}
+            }
+        ]
     `
 }, {
     name: "anonymousMessage",

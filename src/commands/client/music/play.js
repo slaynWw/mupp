@@ -36,6 +36,16 @@ module.exports = [{
         $onlyIf[$checkContains[$trackLoadType[$slashOption[song]];track;search;playlist]==true;Упс... Что-то пошло не так...\n-# Результатов не найдено!{options:{interaction}}{extraOptions:{ephemeral}}]
 
         $checkVoice
+
+        $onlyIf[$getMVar[categoryMusic]==false;
+            Упс... Что-то пошло не так...\n-# Данная команда выключена.
+            {options:
+                {interaction}   
+            }
+            {extraOptions:
+                {ephemeral}
+            }
+        ]
     `
 }];
 

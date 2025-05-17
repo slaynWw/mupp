@@ -32,5 +32,15 @@ module.exports = [{
 
         $let[color2;$randomText[#2757b3;#44a57b;#880788;#9e9f0e;#b45004]]
         $let[color1;$randomText[#b3638a;#788838;#458f9f;#02781f;#805504]]
+
+        $onlyIf[$getMVar[categoryFun]==false;
+            Упс... Что-то пошло не так...\n-# Данная команда выключена.
+            {options:
+                {interaction}   
+            }
+            {extraOptions:
+                {ephemeral}
+            }
+        ]
     `
 }]

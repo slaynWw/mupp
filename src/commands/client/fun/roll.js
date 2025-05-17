@@ -12,5 +12,15 @@ module.exports = [{
         $let[maxCheck;$if[$get[minCheck]>=2147483647;21474836467;$get[minCheck]]]
         $let[minCheck;$if[$get[emptyCheck]<=-1;$replaceText[$get[emptyCheck];-;];$get[emptyCheck]]]
         $let[emptyCheck;$if[$slashOption[roll]==;100;$slashOption[roll]]]
+        
+        $onlyIf[$getMVar[categoryFun]==false;
+            Упс... Что-то пошло не так...\n-# Данная команда выключена.
+            {options:
+                {interaction}   
+            }
+            {extraOptions:
+                {ephemeral}
+            }
+        ]
     `
 }]
