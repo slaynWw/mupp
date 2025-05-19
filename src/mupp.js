@@ -10,8 +10,8 @@ const { ClusterClient, getInfo } = require('discord-hybrid-sharding');
 const client = new AoiClient({
     token: config.token,
     prefix: config.prefix,
-    intents: ['Guilds', 'GuildMessages', 'GuildPresences', 'GuildVoiceStates', 'DirectMessages', 'MessageContent'],
-    events: ['onMessage', 'onInteractionCreate', 'onVoiceStateUpdate', 'onGuildJoin', 'onGuildLeave'],
+    intents: ['Guilds', 'GuildMessages', 'GuildPresences', 'GuildVoiceStates', 'DirectMessages', 'MessageContent', 'GuildMembers'],
+    events: ['onMessage', 'onInteractionCreate', 'onVoiceStateUpdate', 'onGuildJoin', 'onGuildLeave', 'onJoin'],
     disableAoiDB: true,
     suppressAllErrors: config.errors,
     aoiLogs: config.debug,

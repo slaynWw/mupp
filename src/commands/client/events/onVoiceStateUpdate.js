@@ -7,7 +7,7 @@ module.exports = [{
             $setUserMVar[voiceJoined;$dateStamp;$authorID]
             $setUserMVar[voiceID;$voiceID;$authorID]
             $appendFile[./src/data/voice.log;\[+\] $username[$authorID] $channelName[$voiceId]\n;utf8]
-            $log[\[+\] $username[$authorID] $channelName[$voiceId]]
+            $log[\[+\] \[$guildName\] $username[$authorID] $channelName[$voiceId]]
         $endIf
 
         $onlyIf[$getUserMVar[voiceJoined;$authorId]==0]
@@ -23,8 +23,8 @@ module.exports = [{
         
         $appendFile[./src/data/voice.log;\[-\] $username[$authorID] $channelName[$getUserMVar[voiceID;$authorID]]\n;utf8]
         $appendFile[./src/data/voice.log;\[T\] $username[$authorID] $math[$dateStamp-$getUserMVar[voiceJoined;$authorID]]ms\n;utf8]
-        $log[\[-\] $username[$authorID] $channelName[$getUserMVar[voiceID;$authorID]]]
-        $log[\[T\] $username[$authorID] $math[$dateStamp-$getUserMVar[voiceJoined;$authorID]]ms]
+        $log[\[-\] \[$guildName\] $username[$authorID] $channelName[$getUserMVar[voiceID;$authorID]]]
+        $log[\[T\] \[$guildName\] $username[$authorID] $math[$dateStamp-$getUserMVar[voiceJoined;$authorID]]ms]
 
         $setUserMVar[voiceTime;$math[$getUserMVar[voiceTime;$authorID]+$math[$dateStamp-$getUserMVar[voiceJoined;$authorID]];$authorId]
 
