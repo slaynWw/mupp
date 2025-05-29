@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "aoi.canvas": "^3.0.10",
-    "aoi.js": "^6.10.2",
+    "aoi.js": "^6.10.3",
     "aoi.js-handler": "^1.1.0",
     "aoi.mongodb": "github:NanotechPikachu/aoi.mongodb",
     "aoijs.lavalink": "^4.8.0",

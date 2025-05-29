@@ -2,6 +2,7 @@ module.exports = [{
     name: "voiceJoin",
     channel: "$channelId",
     type: "voiceStateUpdate",
+    $if: "old",
     code: `
         $if[$oldState[deaf]==$newState[deaf]&&$oldState[mute]==$newState[mute]&&$oldState[streaming]==$newState[streaming]&&$oldState[selfVideo]==$newState[selfVideo]]
             $setUserMVar[voiceJoined;$dateStamp;$authorID]
